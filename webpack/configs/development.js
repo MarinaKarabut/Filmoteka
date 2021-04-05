@@ -16,7 +16,14 @@ module.exports = env => ({
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
-    ],
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
+        options: {
+          sources: false,
+        }
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -1,0 +1,19 @@
+// UTILS
+@import './utils/variables';
+@import './utils/visually-hidden';
+@import './utils/mixins';
+
+//BASE
+
+@import './base/common';
+@import './base/container';
+
+// COMPONENTS
+
+@import './components/buttons';
+@import './components/modal';
+
+// LAYOUT
+
+@import './layout/header';
+@import './layout/footer';
