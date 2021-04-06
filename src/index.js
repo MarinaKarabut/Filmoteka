@@ -1,12 +1,14 @@
-import headerMain from './templates/header-main.hbs';
-import headerLibrary from './templates/header-library.hbs';
-import movieGallery from './templates/movie-gallery.hbs';
-import spiner from './templates/spiner.hbs';
-import footer from './templates/footer.hbs';
-import modalWindow from './templates/modal-window.hbs';
-
+import './sass/main.scss'
+import headerMain from './templates/header-main.hbs'
+import headerLibrary from './templates/header-library.hbs'
+import movieGallery from './templates/movie-gallery.hbs'
+import spiner from './templates/spiner.hbs'
+import footer from './templates/footer.hbs'
+import modalWindow from './templates/modal-window.hbs'
+import footerSrc from './images/sprite.svg'
+console.log(footerSrc)
 //-----------------------------------------------------------
-
+import './js/renderMarkupMovie.js'
 const refs = {
     headerMain: document.getElementById('header-main'),
     headerLibrary: document.getElementById('header-library'),
@@ -27,3 +29,4 @@ refs.modalWindow.innerHTML = modalWindow();
 import './sass/main.scss';
 import './js/renderMarkupMovie.js';
 import './js/searchMovies';
+
