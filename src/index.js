@@ -1,12 +1,11 @@
-import './sass/main.scss';
 import headerMain from './templates/header-main.hbs';
 import headerLibrary from './templates/header-library.hbs';
 import movieGallery from './templates/movie-gallery.hbs';
 import spiner from './templates/spiner.hbs';
 import footer from './templates/footer.hbs';
 import modalWindow from './templates/modal-window.hbs';
+
 //-----------------------------------------------------------
-import "./js/renderMarkupMovie.js";
 
 const refs = {
     headerMain: document.getElementById('header-main'),
@@ -24,3 +23,6 @@ refs.spiner.innerHTML = spiner();
 refs.footer.innerHTML = footer();
 refs.modalWindow.innerHTML = modalWindow();
 
+
+import './sass/main.scss';
+import "./js/renderMarkupMovie.js";
