@@ -1,3 +1,4 @@
+import './sass/main.scss';
 import headerMain from './templates/header-main.hbs';
 import headerLibrary from './templates/header-library.hbs';
 import movieGallery from './templates/movie-gallery.hbs';
