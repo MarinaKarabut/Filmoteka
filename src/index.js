@@ -5,7 +5,7 @@ import movieGallery from './templates/movie-gallery.hbs'
 import spiner from './templates/spiner.hbs'
 import footer from './templates/footer.hbs'
 import modalWindow from './templates/modal-window.hbs'
-import footerSrc from './images/Rectangle 2.svg'
+import footerSrc from './images/sprite.svg'
 console.log(footerSrc)
 //-----------------------------------------------------------
 import './js/renderMarkupMovie.js'
