@@ -22,11 +22,21 @@ return  req
     
 }
 
-firstPage().then(movies => renderMarkupMovieCard(movies))
+firstPage().then(movies => {
+    console.log(movies)
+    renderMarkupMovieCard(movies)
+})
 
 function renderMarkupMovieCard(movies) {
-      const gallery = document.querySelector('.js-gallery-movies')
-      const markup = movieCardTpl(movies)
+    const gallery = document.querySelector('.js-gallery-movies')
+    const renderMovies = movies.map(({release_date, ...rest}) => {
+        const [newRelease_date] = release_date.split("-");
+        return {
+            ...rest,
+            release_date: newRelease_date
+        }
+    })
+      const markup = movieCardTpl(renderMovies)
       console.log(markup);
       gallery.insertAdjacentHTML('beforeend', markup)
   }
