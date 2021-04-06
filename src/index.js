@@ -19,6 +19,7 @@ const refs = {
 refs.headerMain.innerHTML = headerMain();
 refs.headerLibrary.innerHTML = headerLibrary();
 refs.gallery.innerHTML = movieGallery();
+
 refs.spiner.innerHTML = spiner();
 refs.footer.innerHTML = footer();
 refs.modalWindow.innerHTML = modalWindow();
