@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const paths = require('../utils/paths');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = env => ({
   devtool: 'cheap-eval-source-map',
@@ -10,17 +11,24 @@ module.exports = env => ({
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        use: [('style-loader', MiniCssExtractPlugin.loader), 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: [ MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[name].[id].[contenthash].css',
     }),
   ],
   devServer: {
