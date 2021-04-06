@@ -1,0 +1,16 @@
+.film-footer {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.19;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background: #f7f7f7;
+  color: #545454;
+}
+
+.animate__animated {
+  animation: 5s linear 2s infinite alternate heartBeat;
+}
