@@ -9,12 +9,14 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 658px;
+    max-width: 648px;
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .container {
-    max-width: 922px;
+    max-width: 912px;
   }
 }
