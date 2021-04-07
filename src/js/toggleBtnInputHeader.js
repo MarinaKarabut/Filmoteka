@@ -1,11 +1,14 @@
-import refs from './refs.js'
 
-refs.btnWatchedHeader.addEventListener('click', onToggleBtnInputHeader);
 
-function onToggleBtnInputHeader() {
+// refs.myLibraryPage.addEventListener('click', onToggleBtnInputHeader);
+// console.log(myLibraryPage);
+// function onToggleBtnInputHeader() {
     
-    if (!btnWatchedHeader) {
+//     if (refs.searchField) {
         
-    }
+//         refs.searchField.classList.add('is-hidden');
 
-}
+
+//     } 
+
+// }

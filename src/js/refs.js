@@ -4,5 +4,7 @@ export default {
     modal: document.querySelector('.js-modal'),
     imgCard: document.querySelector('.movie-card-img'),
     btnWatchedHeader: document.getElementById('js-btn-watched'),
-    btnQueueHeader: document.getElementById('js-btn-queue')
+    btnQueueHeader: document.getElementById('js-btn-queue'),
+    myLibraryPage: document.querySelector('.list-nav-item'),
+    searchField: document.querySelector('.search-field')
 };
