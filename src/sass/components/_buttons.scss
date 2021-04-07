@@ -1,0 +1,47 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  width: 129px;
+  height: 44px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.3;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  padding-left: 21px;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 0;
+  transition: background-color 250ms linear;
+}
+
+.button.is-hidden {
+  display: none;
+}
+
+.button:not(:last-child) {
+  margin-right: 20px;
+}
+
+.btn-watched:hover {
+  background-color: #ff6b08;
+}
+
+.btn-queue:hover {
+  background-color: #ff6b08;
+}
+
+@media screen and (min-width: 768) and (min-width: 1200px) {
+  .button {
+    width: 136px;
+  }
+}
