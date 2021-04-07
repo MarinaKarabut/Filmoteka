@@ -1,0 +1,31 @@
+.film-footer {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.19;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+  color: #545454;
+  padding-top: 30px;
+  padding-bottom: 28px;
+
+  @media screen and (min-width: 480px) {
+    font-size: 16px;
+    flex-direction: inherit;
+  }
+}
+
+.footer-text {
+  margin-bottom: 10px;
+  @media screen and (min-width: 480px) {
+    margin-bottom: 0px;
+  }
+}
+
+.animate__animated {
+  animation: 5s linear 2s infinite alternate heartBeat;
+}
