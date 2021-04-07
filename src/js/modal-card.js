@@ -1,7 +1,8 @@
 import refs from './refs.js'
 import modalCardRender from '../templates/cardsOpenModalMovies.hbs'
 function getFilmById(id) {
-  const finalAddress = `${BASE_URL}/${id}?api_key=${BASE_API}`
+  const IDURL = 'https://api.themoviedb.org/3/movie'
+  const finalAddress = `${IDURL}/${id}?api_key=${BASE_API}`
   const idReq = fetch(finalAddress)
   return idReq
     .then(response => {
@@ -22,10 +23,10 @@ function getFilmById(id) {
     }))
 }
 
+console.log(getFilmById(46))
+
 const BASE_API = '923c2cf88ec4338da74c768a045101f0'
 const BASE_URL = 'https://api.themoviedb.org/3/trending/movie'
-
-console.log(getFilmById(46))
 
 refs.gallery.addEventListener('click', onClickGallery)
 
