@@ -1,9 +1,8 @@
 import movieCardTpl from '../templates/cardsMovies.hbs';
-
-
+import refs from './refs';
 const BASE_API = '923c2cf88ec4338da74c768a045101f0';
 const BASE_URL = 'https://api.themoviedb.org/3/trending/movie';
-
+// Ожидаемая API от Дани (начало)//
 function createUrl() {
   const finalUrl = `${BASE_URL}/day?api_key=${BASE_API}&page=1`;
   return finalUrl;
@@ -17,15 +16,12 @@ function firstPage() {
         )
         .then(({ results }) => results.map(({ poster_path, original_title, genre_ids, release_date, vote_average, id }) =>
             ({ poster_path, original_title, genre_ids, release_date, vote_average, id })));
-
 }
-
+// Ожидаемая API от Дани (конец)//
 firstPage().then(movies => {
     renderMarkupMovieCard(movies);
 });
-
-function renderMarkupMovieCard(movies) {
-    const gallery = document.querySelector('.js-gallery-movies');
+export default function renderMarkupMovieCard(movies) {
     const renderMovies = movies.map(({ release_date, ...rest }) => {
         const [newRelease_date] = release_date.split("-");
         return {
@@ -34,8 +30,7 @@ function renderMarkupMovieCard(movies) {
         };
     });
     const markup = movieCardTpl(renderMovies);
-    gallery.insertAdjacentHTML('beforeend', markup);
+    refs.gallery.insertAdjacentHTML('beforeend', markup);
   }
-
 
 
