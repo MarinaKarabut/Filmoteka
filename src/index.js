@@ -1,4 +1,5 @@
 import './sass/main.scss';
+import './js/toggleBtnInputHeader.js';
 import './js/addBaseTmp.js';
 import './js/renderMarkupMovie.js';
 import './js/modal-card.js';
