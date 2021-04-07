@@ -18,11 +18,20 @@ function onSearch(e) {
     const filmsResponse = searchFilm(filmsValue)
     filmsResponse
         .then(movies => {
-        //     if (!movies.length) {
-        //         clearMarkupMovieCard()
-        // }
+          if (!movies.length) {
+            const errorMsg = document.createElement("p");
+            errorMsg.classList.add("error-message");
+            errorMsg.textContent = 'Search result not successful. Enter the correct movie name and'
+            refs.searchForm.after(errorMsg)
+            setTimeout(() => {
+              errorMsg.remove()
+            }, 1500);
+          } else {
             clearMarkupMovieCard()
-            renderMarkupMovieCard(movies)
+            renderMarkupMovieCard(movies) 
+          }
+
+            
         })
 }
  function clearMarkupMovieCard() {
