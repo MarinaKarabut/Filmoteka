@@ -1,5 +1,5 @@
 import movieCardTpl from '../templates/cardsMovies.hbs';
-import refs from './refs';
+import refs from './refs.js';
 const BASE_API = '923c2cf88ec4338da74c768a045101f0';
 const BASE_URL = 'https://api.themoviedb.org/3/trending/movie';
 // Ожидаемая API от Дани (начало)//
