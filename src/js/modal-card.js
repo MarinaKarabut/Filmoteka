@@ -1,9 +1,14 @@
 import refs from './refs.js'
 import modalCardRender from '../templates/cardsOpenModalMovies.hbs'
+// import Функция Дани
+
+const BASE_API = '923c2cf88ec4338da74c768a045101f0'
+const BASE_URL = 'https://api.themoviedb.org/3/trending/movie'
 function getFilmById(id) {
   const IDURL = 'https://api.themoviedb.org/3/movie'
   const finalAddress = `${IDURL}/${id}?api_key=${BASE_API}`
   const idReq = fetch(finalAddress)
+
   return idReq
     .then(response => {
       if (!response.ok) {
@@ -23,10 +28,7 @@ function getFilmById(id) {
     }))
 }
 
-console.log(getFilmById(46))
-
-const BASE_API = '923c2cf88ec4338da74c768a045101f0'
-const BASE_URL = 'https://api.themoviedb.org/3/trending/movie'
+console.log(getFilmById(791373))
 
 refs.gallery.addEventListener('click', onClickGallery)
 
@@ -37,10 +39,33 @@ function onClickGallery(e) {
   }
 
   refs.modal.classList.add('is-open')
-  const id = refs.imgCard.dataset.index
+  const id = e.target.dataset.index
+
   const dataSource = getFilmById(id)
 
   dataSource.then(result => {
-    console.log(result)
+    refs.modal.innerHTML = modalCardRender(result)
   })
+}
+
+refs.buttonClose.addEventListener('click', callbackClose)
+
+function callbackClose() {
+  refs.modal.classList.remove('is-open')
+}
+
+overlay.addEventListener('click', onClickOverlay)
+
+function onClickOverlay(event) {
+  if (event.target === event.currentTarget) {
+    callbackClose()
+  }
+}
+
+window.addEventListener('keydown', escapeClose)
+
+function escapeClose(event) {
+  if (event.code === 'Escape') {
+    callbackClose()
+  }
 }
