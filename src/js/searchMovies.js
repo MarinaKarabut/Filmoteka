@@ -21,7 +21,7 @@ function onSearch(e) {
       if (!movies.length) {
         const errorMsg = document.createElement("p");
         errorMsg.classList.add("error-message");
-        errorMsg.textContent = 'Search result not successful. Enter the correct movie name and';
+        errorMsg.textContent = 'Search result not successful. Enter the correct movie name.';
         refs.searchForm.after(errorMsg);
         setTimeout(() => {
           errorMsg.remove();
