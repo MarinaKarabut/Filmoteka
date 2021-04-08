@@ -16,7 +16,18 @@
   font-size: 14px;
   line-height: 1.14;
   outline: none;
+
+  &::placeholder {
+    color: #ffffff;
+    transition: color 250ms linear;
+    opacity: 1;
+  }
+
+  &:focus::placeholder {
+    opacity: 0;
+  }
 }
+
 input[type='text'] {
   color: #ffffff;
   padding-bottom: 4px;
@@ -25,15 +36,6 @@ input[type='text'] {
   font-size: 14px;
   line-height: 1.14;
 }
-.search-field::placeholder {
-  color: #ffffff;
-  transition: color 250ms linear;
-  opacity: 1;
-}
-.search-field:focus::placeholder {
-  opacity: 0;
-}
-
 .icon-search {
   position: absolute;
   top: 0;

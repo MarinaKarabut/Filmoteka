@@ -32,28 +32,30 @@
 .list-nav {
   @include flex;
   text-decoration: none;
-}
-.list-nav-item {
-  position: relative;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.16;
-  text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-  list-style: none;
-  padding-bottom: 5px;
-}
-.list-nav-item:not(:last-child) {
-  margin-right: 39px;
+
+  &-item {
+    position: relative;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.16;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    padding-bottom: 5px;
+  }
+  &-item:not(:last-child) {
+    margin-right: 39px;
+  }
 }
 
 .list-item-link {
   text-decoration: none;
   color: #ffffff;
   transition: color 250ms linear;
-}
-.list-item-link:hover {
-  color: #ff6b08;
+
+  &:hover {
+    color: #ff6b08;
+  }
 }
 
 .currant::after {
