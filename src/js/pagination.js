@@ -1,106 +1,112 @@
 const pagination = document.querySelector('.pagination-container')
-const pagList = document.getElementById('pagination-list')
+const paginationBtns = document.getElementById('pagination-btns')
 const arrowLeft = document.getElementById('arrow-left')
 const arrowRight = document.getElementById('arrow-right')
 
-const firstPage = document.getElementById('first-page')
-const interval1 = document.getElementById('interval1')
-const prevSibling2 = document.getElementById('prev-sibling2')
-const prevSibling1 = document.getElementById('prev-sibling1')
-const currentPage = document.getElementById('current-page')
-const nextSibling1 = document.getElementById('next-sibling1')
-const nextSibling2 = document.getElementById('next-sibling2')
-const interval2 = document.getElementById('interval2')
-const lastPage = document.getElementById('last-page')
+let totalPages = 500;
+let page =  5;
 
 
-function pagBtnMarkup({totalPages, page},listener) {
-    prevSibling2.textContent = page - 2;
-    prevSibling1.textContent = page - 1;
-    currentPage.textContent = page;
-    nextSibling1.textContent = page + 1;
-    nextSibling2.textContent = page + 2;
-    lastPage.textContent = totalPages
+function pagBtnRender(totalPages,page) {
+    let pagMarkup = '';
+    let renderStart = page - 2;
+    let renderEnd = page + 3;
+    if (page === 1) {
+        for (let pageLength = page; pageLength < renderEnd; pageLength++) {
+            pagMarkup += `<button class="pagination-button">${pageLength}</button>`
+        }
+        pagMarkup += `<p class="interval">...</p><button class="pagination-button">${totalPages}</button>`
 
-    listener.addEventListener('click', function (e) {
-        if (!e.target.classList.contains("arrow-btn")){
-            options.page = +e.target.textContent
+        arrowLeft.setAttribute('disabled', 'disabled')
+
+    }else if (page === 2) {
+         for (let pageLength = page - 1; pageLength < renderEnd; pageLength++) {
+            pagMarkup += `<button class="pagination-button">${pageLength}</button>`
         }
-        
-         if (e.target.classList.contains('pagination-item')) {
-            currentPage.textContent = e.target.textContent
-            prevSibling2.textContent = currentPage.textContent - 2;
-            prevSibling1.textContent = currentPage.textContent - 1;
-            nextSibling1.textContent = +currentPage.textContent + 1;
-            nextSibling2.textContent = +currentPage.textContent + 2;
-         } else if (e.target.id === 'arrow-left') {
-             options.page--;
-            currentPage.textContent = options.page
-            prevSibling2.textContent = currentPage.textContent - 2;
-            prevSibling1.textContent = currentPage.textContent - 1;
-            nextSibling1.textContent = +currentPage.textContent + 1;
-            nextSibling2.textContent = +currentPage.textContent + 2;
-         } else if (e.target.id === 'arrow-right') {
-             options.page++;
-            currentPage.textContent = options.page
-            prevSibling2.textContent = currentPage.textContent - 2;
-            prevSibling1.textContent = currentPage.textContent - 1;
-            nextSibling1.textContent = +currentPage.textContent + 1;
-            nextSibling2.textContent = +currentPage.textContent + 2;
+        pagMarkup += `<p class="interval">...</p><button class="pagination-button">${totalPages}</button>`
+
+        arrowLeft.removeAttribute('disabled')
+
+    }else if (page === 3) {
+            for (let pageLength = renderStart; pageLength < renderEnd; pageLength++) {
+            pagMarkup += `<button class="pagination-button">${pageLength}</button>`
         }
-        // ARROW-LEFT
-        if (currentPage.textContent === '1') {
-            arrowLeft.setAttribute("disabled", "disabled")
-            firstPage.classList.add("hidden")
-            interval1.classList.add("hidden")
-            prevSibling2.classList.add("hidden")
-            prevSibling1.classList.add("hidden")
-        } else if (currentPage.textContent === '2') {
-            arrowLeft.removeAttribute("disabled")
-            firstPage.classList.remove("hidden")
-            interval1.classList.add("hidden")
-            prevSibling2.classList.add("hidden")
-            prevSibling1.classList.add("hidden")
-        }else if (currentPage.textContent === '3') {
-            interval1.classList.add("hidden")
-            prevSibling2.classList.add("hidden")
-            prevSibling1.classList.remove("hidden")
-        } else if (currentPage.textContent === '4') {
-            interval1.classList.add("hidden")
-        }else {
-            
-            firstPage.classList.remove("hidden")
-            interval1.classList.remove("hidden")
-            prevSibling2.classList.remove("hidden")
-            prevSibling1.classList.remove("hidden")
+        pagMarkup += `<p class="interval">...</p><button class="pagination-button">${totalPages}</button>`
+    }else if (page === 4) {
+            pagMarkup += `<button class="pagination-button">1</button>`
+            for (let pageLength = renderStart; pageLength < renderEnd; pageLength++) {
+            pagMarkup += `<button class="pagination-button">${pageLength}</button>`
         }
-    // ================================================================================
-        if (currentPage.textContent === `${totalPages}`) {
-            arrowRight.setAttribute("disabled", "disabled")
-            lastPage.classList.add("hidden")
-            interval2.classList.add("hidden")
-            nextSibling2.classList.add("hidden")
-            nextSibling1.classList.add("hidden")
-        } else if (currentPage.textContent === `${totalPages - 1}`) {
-            arrowRight.removeAttribute("disabled")
-            lastPage.classList.add("hidden")
-            interval2.classList.add("hidden")
-            nextSibling2.classList.add("hidden")
-            nextSibling1.classList.remove("hidden")
-            
-        }else if (currentPage.textContent === `${totalPages - 2}`) {
-            lastPage.classList.add("hidden")
-            nextSibling2.classList.remove("hidden")
-            
-        } else if (currentPage.textContent === `${totalPages - 3}`) {
-            lastPage.classList.remove("hidden")
-            interval2.classList.add("hidden")
-        } else if (currentPage.textContent === `${totalPages - 4}`) {
-            interval2.classList.remove("hidden")
-        } else {
-            lastPage.classList.remove("hidden")
-            interval2.classList.remove("hidden")
+        pagMarkup += `<p class="interval">...</p><button class="pagination-button">${totalPages}</button>`
+    }else if (page > 4 && page < totalPages - 3) {
+            pagMarkup += `<button class="pagination-button">1</button><p class="interval">...</p>`
+
+            for (let pageLength = renderStart; pageLength < renderEnd; pageLength++) {
+                pagMarkup += `<button class="pagination-button">${pageLength}</button>`
+        }
+        pagMarkup += `<p class="interval">...</p><button class="pagination-button">${totalPages}</button>`
+    } else if(page === totalPages - 3) {
+        pagMarkup += `<button class="pagination-button">1</button><p class="interval">...</p>`
+        for (let pageLength = renderStart; pageLength < renderEnd; pageLength++) {
+                pagMarkup += `<button class="pagination-button">${pageLength}</button>`
+        }
+        pagMarkup += `<button class="pagination-button">${totalPages}</button>`
+    }
+    else if(page === totalPages - 2) {
+        pagMarkup += `<button class="pagination-button">1</button><p class="interval">...</p>`
+        for (let pageLength = renderStart; pageLength < renderEnd; pageLength++) {
+                pagMarkup += `<button class="pagination-button">${pageLength}</button>`
+        }
+    }
+    else if(page === totalPages - 1) {
+        pagMarkup += `<button class="pagination-button">1</button><li class="interval">...</li>`
+        for (let pageLength = renderStart; pageLength < page + 2; pageLength++) {
+                pagMarkup += `<button class="pagination-button">${pageLength}</button>`
+        }
+
+            arrowRight.removeAttribute('disabled')
+
+    }
+    else if(page === totalPages ) {
+        pagMarkup += `<button class="pagination-button">1</button><li class="interval">...</li>`
+        for (let pageLength = renderStart; pageLength < page + 1; pageLength++) {
+                pagMarkup += `<button class="pagination-button">${pageLength}</button>`
+        }
+
+        arrowRight.setAttribute('disabled', 'disabled')
+
+    }
+
+    paginationBtns.innerHTML = pagMarkup
+
+
+    const pagBtns = paginationBtns.querySelectorAll('.pagination-button')
+    pagBtns.forEach(pagBtn => {
+        if (+pagBtn.textContent === page) {
+            pagBtn.classList.add('active')
         }
     })
-    
+   
 }
+pagBtnRender(totalPages, page)
+
+const currentPage = paginationBtns.querySelector('.active')
+
+pagination.addEventListener('click', function (e) {
+    if (e.target.nodeName !== "BUTTON") { return };
+    const activeBtn = e.target
+    if (e.target.classList.contains('pagination-button')) {
+        page = +activeBtn.textContent
+        console.log(page)
+        currentPage.textContent = page
+    } else if (e.target.id === 'arrow-left') {
+        page = +currentPage.textContent - 1
+        currentPage.textContent = page
+        console.log('work1');
+    } else if (e.target.id === 'arrow-right') {
+        page = +currentPage.textContent
+        currentPage.textContent = page + 1
+        console.log('work2');
+    }
+    pagBtnRender(totalPages, page)
+});
