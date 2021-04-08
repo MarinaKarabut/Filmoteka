@@ -1,6 +1,5 @@
 @mixin flex($main-axis: flex-start, $cross-axis: stretch) {
   display: flex;
-  flex-wrap: wrap;
 
   @if $main-axis != flex-start {
     justify-content: $main-axis;
