@@ -1,23 +1,4 @@
-//UTILS
-@import './utils/variables.scss';
-@import './utils/visually-hidden.scss';
-@import './utils/mixins.scss';
-
-// //BASE
-
-@import './base/common.scss';
-@import './base/container.scss';
-
-// // COMPONENTS
-
-@import './components/buttons.scss';
-@import './components/error.scss';
-@import './components/pagination.scss';
-@import './components/modal.scss';
-
-// LAYOUT
-
-@import './layout/header.scss';
-@import './layout/movie-gallery.scss';
-@import './layout/movie-library.scss';
-@import './layout/footer.scss';
+@import './utils';
+@import './base';
+@import './components';
+@import './layout';

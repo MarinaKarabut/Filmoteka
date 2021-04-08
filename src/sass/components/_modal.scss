@@ -1,4 +1,4 @@
-.modal {
+.backdrop {
   position: fixed;
 
   left: 0;
@@ -19,7 +19,7 @@
   overflow-y: scroll;
 }
 
-.modal__content {
+.modal-content {
   background-color: #fefefe;
   color: #000;
   max-width: 848px;
