@@ -24,10 +24,6 @@
   transition: background-color 250ms linear;
 }
 
-.button.is-hidden {
-  display: none;
-}
-
 .button:not(:last-child) {
   margin-right: 20px;
 }
@@ -44,4 +40,7 @@
   .button {
     width: 136px;
   }
+}
+.is-hidden {
+  display: none;
 }

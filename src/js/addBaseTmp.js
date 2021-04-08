@@ -12,8 +12,14 @@ const refs = {
     footer: document.getElementById('footer'),
     modalWindow: document.getElementById('modal-window'),
 };
-export default function addBaseTmp() {
-refs.headerMain.innerHTML = headerMain();
+
+export default function addBaseTmp() { 
+    // const pathes = {
+    //     pathH: window.location.origin,
+    //     pathL: window.location.origin + '/library',
+    // }
+    // refs.headerMain.innerHTML = headerMain(pathes);
+    refs.headerMain.innerHTML = headerMain();
 refs.gallery.innerHTML = movieGallery();
 refs.pagination.innerHTML = pagination();
 refs.footer.innerHTML = footer({src: footerSrc});
