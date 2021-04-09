@@ -1,5 +1,7 @@
 function closeModal(e) {
-// очищать modal-content и закрывать модальное окно
+  modal.classList.remove('is-open')
+  modalContentRef.innerHTML = ''
+  // очищать modal-content и закрывать модальное окно
 }
 
-export default closeModal;
+export default closeModal
