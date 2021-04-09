@@ -6,3 +6,5 @@ import './js/modal-card.js';
 import './js/addToLocalStorage.js';
 import './js/searchMovies.js';
 import './js/pagination.js';
+
+

@@ -13,8 +13,8 @@ function onToggleBtnHeader(e) {
 
     refs.headerSection.classList.add('is-hidden-backgr');
 
-    refs.myLibraryPage.classList.add('currant')
-    refs.homePage.classList.remove('currant')
+    refs.myLibraryPage.classList.add('active')
+    refs.homePage.classList.remove('active')
 
    
 }
@@ -34,17 +34,26 @@ function onToggleInput(e) {
    
     refs.headerSection.classList.remove('is-hidden-backgr');
 
-    refs.myLibraryPage.classList.remove('currant')
-    refs.homePage.classList.add('currant')
+    refs.myLibraryPage.classList.remove('active')
+    refs.homePage.classList.add('active')
 }
 
+console.log(window.history);
 
-// function onSaveCurrantPage() {
-    
+// const pathes = {
+    //     pathH: window.location.origin,
+    //     pathL: window.location.origin + '/library',
+    // }
+    // refs.headerMain.innerHTML = headerMain(pathes);
 
-// }
+    /*
+    btnWatchedHeader: document.getElementById('js-btn-watched'),
+    btnQueueHeader: document.getElementById('js-btn-queue'),
 
+    homePage: document.querySelector('.active'),
+    myLibraryPage: document.querySelector('.item-library'),
+    headerSection: document.querySelector('.section-header'),
 
-// console.log(window.location);
-
-
+    searchField: document.querySelector('.search-field'),
+    iconSearch: document.querySelector('.icon-search')
+    */

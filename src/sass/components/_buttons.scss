@@ -28,12 +28,12 @@
   margin-right: 20px;
 }
 
-.btn-watched:hover {
-  background-color: #ff6b08;
+.btn-watched-outline:hover {
+  background-color: var(--accent-color);
 }
 
-.btn-queue:hover {
-  background-color: #ff6b08;
+.btn-queue-outline:hover {
+  background-color: var(--accent-color);
 }
 
 @media screen and (min-width: 768) and (min-width: 1200px) {

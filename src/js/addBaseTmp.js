@@ -14,12 +14,8 @@ const refs = {
 };
 
 export default function addBaseTmp() { 
-    // const pathes = {
-    //     pathH: window.location.origin,
-    //     pathL: window.location.origin + '/library',
-    // }
-    // refs.headerMain.innerHTML = headerMain(pathes);
-    refs.headerMain.innerHTML = headerMain();
+    
+refs.headerMain.innerHTML = headerMain();
 refs.gallery.innerHTML = movieGallery();
 refs.pagination.innerHTML = pagination();
 refs.footer.innerHTML = footer({src: footerSrc});
