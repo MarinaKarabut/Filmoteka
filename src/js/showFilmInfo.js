@@ -5,15 +5,19 @@ const movieHttpService = new MovieHttpService()
 
 function showFilmInfo(e) {
   e.preventDefault()
+
   const {target} = e
-  if (target.classList.contains('film-info__img')) {
+
+  if (target.classList.contains('movie-card-img')) {
     const {filmId} = target.dataset
 
     const data = movieHttpService.getFilmId(filmId)
+    data.then(result => {
+      const filmInfo = filmInfoTemplate(result.data)
+      openModal(filmInfo)
+    })
     // data --> вызвать обьект movieHttpService и получить результат ответа (объект фильмов)
     // Передаем data в темплейт для создания разметки.
-    const filmInfo = filmInfoTemplate(data)
-    openModal(filmInfo)
   }
 }
 
