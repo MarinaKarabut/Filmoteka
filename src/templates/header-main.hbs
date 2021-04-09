@@ -1,9 +1,10 @@
-<header class="section-header">
+<header class="section-header ">
 
-    <div class="container nav-container">
-        <nav class="site-nav">
-            <div class="nav-logo">
-                <a href="./home.html" class="link-logo">
+    <div class="container">
+        <nav class="header-nav">
+
+            <div>
+                <a href="#" class="header-icon">
                     <svg class="icon-film" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -24,23 +25,32 @@
                         <path d="M17 7H22" stroke="#818181" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
                     </svg>
-                    <p class="site-logo rubberBand">Filmoteka</p>
+                </a>
+                <a href="/" class="logo header-logo">
+                    <span class="logo-text rubberBand">Filmoteka</span>
                 </a>
             </div>
 
-            <div class="site-list-nav">
+            <div class="header-list-nav">
                 <ul class="list-nav">
                     <li class="list-nav-item">
-                        <a class="list-item-link currant" href="#">Home</a>
+                        <a class="list-item-link active" href='/'>Home</a>
+                        {{!-- <a class="list-item-link currant" href={{pathH}}>Home</a> --}}
                     </li>
-                    <li class="list-nav-item">
-                        <a class="list-item-link" href="#">My Library</a>
+                    <li class="list-nav-item item-library">
+                        <a class="list-item-link" href='/my-library'>My Library</a>
+
+                        {{!-- <a class="list-item-link" href={{pathL}}>My Library</a> --}}
                     </li>
                 </ul>
             </div>
+
         </nav>
-        <div class="input-search-container">
-            <form action="#" class="form-search" id="search-film">
+
+        <div class="header-search-container">
+
+            <form action="#" id='search-film' class="form-search">
+
                 <input type="text" class="search-field" name="query" placeholder="Search films" autocomplete="off" />
 
                 <svg class="icon-search" width="12" height="12" viewBox="0 0 12 12" fill="none"
@@ -52,11 +62,12 @@
                         stroke-linejoin="round" />
                 </svg>
             </form>
+
         </div>
 
         <div class="button-container ">
-            <button type="button" class="button btn-watched is-hidden" id="js-btn-watched">Watched</button>
-            <button type="button" class="button btn-queue is-hidden" id="js-btn-queue">Queue</button>
+            <button type="button" class="button btn-watched-outline is-hidden " id="js-btn-watched">Watched</button>
+            <button type="button" class="button btn-queue-outline is-hidden " id="js-btn-queue">Queue</button>
         </div>
     </div>
 
