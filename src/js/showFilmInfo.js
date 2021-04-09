@@ -6,10 +6,10 @@ const movieHttpService = new MovieHttpService()
 function showFilmInfo(e) {
   e.preventDefault()
   const {target} = e
-  if (target.classList.contains('is-open')) {
+  if (target.classList.contains('film-info__img')) {
     const {filmId} = target.dataset
 
-    const data = movieHttpService.XXXXXXXPORNXXXXXXXXXXXX(filmId)
+    const data = movieHttpService.getFilmId(filmId)
     // data --> вызвать обьект movieHttpService и получить результат ответа (объект фильмов)
     // Передаем data в темплейт для создания разметки.
     const filmInfo = filmInfoTemplate(data)
