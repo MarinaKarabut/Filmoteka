@@ -12,6 +12,7 @@ function openModal(modalContent) {
     
     backdrop.classList.add('is-open');
     modal.classList.add('is-open');
+
 }
 
 export default openModal;
