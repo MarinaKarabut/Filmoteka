@@ -1,4 +1,5 @@
 import './sass/main.scss';
+
 import MovieHttpService from './js/MovieHttpService';
 import renderFilms from './js/renderFilms';
 import showFilmInfo from './js/showFilmInfo';
@@ -57,3 +58,4 @@ window.addEventListener('DOMContentLoaded', async () => {
     formSearchFilm.addEventListener('submit', searchFormHandler);
 
 });
+
