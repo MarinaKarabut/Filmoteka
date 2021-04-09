@@ -4,7 +4,7 @@ axios.defaults.baseURL = "https://api.themoviedb.org/3";
 class MovieHttpService {
   static BASE_URL = "https://api.themoviedb.org/3";
   static API_KEY = "923c2cf88ec4338da74c768a045101f0";
-  
+
   static setGenres(genres) {
     MovieHttpService.genres = genres;
   }
@@ -12,7 +12,8 @@ class MovieHttpService {
   constructor() {
   }
 
-  async get({ endpoint, options: {page, query}}) {
+  async get({
+    endpoint, options: { page, query } }) {
     // const fullURL = this.getFullURL({ })
      try {
        const { data: films } = await axios.get(endpoint, {
@@ -25,10 +26,10 @@ class MovieHttpService {
        });
        const { results } = films;
        const genres = MovieHttpService.genres;
-       const fullResults = results.map(film => {         
+       const fullResults = results.map(film => {
          const genre_list = film.genre_ids.map(id => genres[id])
            .filter(el => el);
-         return { ...film, genre_list }
+         return { ...film, genre_list };
        });
        films.results = fullResults;
        return films;
@@ -50,18 +51,28 @@ class MovieHttpService {
            language: "en-US",
          }
       });
-      const genresMap = genres.reduce((acc, {id, name}) => {
-        acc[id] = name
-        return acc
-      }, {})
+      const genresMap = genres.reduce((acc, { id, name }) => {
+        acc[id] = name;
+        return acc;
+      }, {});
       return genresMap;
+    }
+
+  getFilmId(id) {
+    const filmIdRequest = axios.get(`/movie/${id}`, {
+      params: {
+        api_key: MovieHttpService.API_KEY,
+      }
+    });
+    filmIdRequest
+      .then(result => { return console.log(result); });
     }
 
   //   getFullURL({ endpoint, options = "" }) {
   //       const fullURL = `${MovieHttpService.BASE_URL}/${endpoint}?api_key=${MovieHttpService.API_KEY}&${options}`;
   //       return fullURL;
   // }
-  
+
 //   createOptions(pagenumber = 1,search = '') {
 // // опшенс для серч,опшенс для ключевого слова,опшенс для поиску по айди
 // // возвращает строку
@@ -69,7 +80,8 @@ class MovieHttpService {
 //     return stringForUrl;
 //   }
 }
-
+const movieHttpService = new MovieHttpService();
+movieHttpService.getFilmId();
 export default MovieHttpService;
 
 

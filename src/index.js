@@ -31,7 +31,7 @@ const refs = {
 refs.header.innerHTML = headerTemplate();
 refs.main.innerHTML = movieGalleryTemplate();
 refs.footer.innerHTML = footerTemplate({src: footerSrc});
-// refs.modalWindow.innerHTML = modalWindowTemplate();
+refs.modalWindow.innerHTML = modalWindowTemplate();
 
 const movieHttpService = new MovieHttpService();
 

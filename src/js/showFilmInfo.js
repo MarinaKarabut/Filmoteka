@@ -9,7 +9,7 @@ function showFilmInfo(e) {
     const { target } = e;
     if (target.classList.contains('подставить класс img')) {
         const { filmId } = target.dataset;
-
+        const data = movieHttpService.getFilmId(filmId);
         // data --> вызвать обьект movieHttpService и получить результат ответа (объект фильмов)
         // Передаем data в темплейт для создания разметки.
         const filmInfo = filmInfoTemplate(data);
@@ -17,5 +17,4 @@ function showFilmInfo(e) {
     }
 
 }
-
 export default showFilmInfo;
