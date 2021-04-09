@@ -83,14 +83,14 @@ function pagBtnRender(totalPages,page) {
     const pagBtns = paginationBtns.querySelectorAll('.pagination-button')
     pagBtns.forEach(pagBtn => {
         if (+pagBtn.textContent === page) {
-            pagBtn.classList.add('active')
+            pagBtn.classList.add('current-page')
         }
     })
    
 }
 pagBtnRender(totalPages, page)
 
-const currentPage = paginationBtns.querySelector('.active')
+const currentPage = paginationBtns.querySelector('.current-page')
 
 pagination.addEventListener('click', function (e) {
     if (e.target.nodeName !== "BUTTON") { return };

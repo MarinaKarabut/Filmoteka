@@ -1,24 +1,20 @@
 .pagination {
   &-container {
     // mixins
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
+    @include flex(center);
     // margin: 0 auto;
     margin-bottom: 60px;
   }
 
   &-btns {
+    @include flex(center);
     height: 40px;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 0 10px;
     min-width: 200px;
-    width: fit-content;
     // position: relative;
   }
-
   &-button {
     display: flex;
     align-items: center;
@@ -48,7 +44,7 @@
       box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.521);
     }
   }
-  &-button.active {
+  &-button.current-page {
     width: 40px;
     height: 40px;
     background-color: var(--accent-color);
@@ -71,22 +67,13 @@
     background-color: var(--accent-color); // scss variables
     color: var(--secondary-color);
   }
+  &:focus {
+    border: 1px solid #0000004d;
+  }
+  &:active {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.562);
+  }
 }
-
-.arrow-btn:focus {
-  border: 1px solid #0000004d;
-}
-.arrow-btn:active {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.562);
-}
-.pagination-button.active {
-  width: 40px;
-  height: 40px;
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
-  margin-right: 16px;
-}
-
 .interval {
   margin-right: 16px;
   font-size: 30px;
