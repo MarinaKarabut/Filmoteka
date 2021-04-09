@@ -9,10 +9,11 @@
 }
 
 .movie-card-img {
+  border-radius: 5px;
   width: 100%;
   transition: transform 250ms linear;
   cursor: pointer;
-  & :hover {
+  &:hover {
     transform: scale(1.03);
   }
 }

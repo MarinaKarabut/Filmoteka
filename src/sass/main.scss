@@ -1,12 +1,4 @@
-//UTILS
-@import './utils/';
-
-// //BASE
-@import './base/';
-
-// // COMPONENTS
-@import './components/';
-
-// LAYOUT
-
-@import './layout/';
+@import './utils';
+@import './base';
+@import './components';
+@import './layout';
