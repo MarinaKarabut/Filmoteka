@@ -1,4 +1,4 @@
-import refs from './refs';
+
 
 
 // refs.btnAddToWatched.addEventListener('click', onClickBtn)
@@ -49,3 +49,4 @@ function onClickBtn() {
 // };
 
 addToWatched({ arr: 32, id : 38})
+

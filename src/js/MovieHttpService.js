@@ -1,13 +1,18 @@
 const axios = require("axios");
+
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
 class MovieHttpService {
   static BASE_URL = "https://api.themoviedb.org/3";
   static API_KEY = "923c2cf88ec4338da74c768a045101f0";
+
+  
   static setGenres(genres) {
     MovieHttpService.genres = genres;
   }
+
   constructor() {
   }
+
   async get({ endpoint, options: {page, query}}) {
     // const fullURL = this.getFullURL({ })
      try {
@@ -21,6 +26,7 @@ class MovieHttpService {
        });
        const { results } = films;
        const genres = MovieHttpService.genres;
+
        const movies = results.map(({ poster_path, original_title, genre_ids, release_date, vote_average, id, name, original_name,...rest}) => {
          const genreList = genre_ids.map(id => {
            return genres[id]
@@ -52,6 +58,7 @@ class MovieHttpService {
      }
         // вернуть ответ, в котором в каждом фильме будет своство genres = ["Жанр", "Жанр"]
     }
+
     async getAllGenres() {
       //  console.log("object", axios.defaults.baseURL);
       // const fullURL = this.getFullURL({ endpoint: "allgenres" });
@@ -71,6 +78,7 @@ class MovieHttpService {
   //       const fullURL = `${MovieHttpService.BASE_URL}/${endpoint}?api_key=${MovieHttpService.API_KEY}&${options}`;
   //       return fullURL;
   // }
+
 //   createOptions(pagenumber = 1,search = '') {
 // // опшенс для серч,опшенс для ключевого слова,опшенс для поиску по айди
 // // возвращает строку
@@ -78,4 +86,6 @@ class MovieHttpService {
 //     return stringForUrl;
 //   }
 }
+
 export default MovieHttpService;
+
