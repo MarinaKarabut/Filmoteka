@@ -4,6 +4,7 @@ axios.defaults.baseURL = "https://api.themoviedb.org/3";
 class MovieHttpService {
   static BASE_URL = "https://api.themoviedb.org/3";
   static API_KEY = "923c2cf88ec4338da74c768a045101f0";
+
   
   static setGenres(genres) {
     MovieHttpService.genres = genres;
@@ -25,16 +26,33 @@ class MovieHttpService {
        });
        const { results } = films;
        const genres = MovieHttpService.genres;
-       const fullResults = results.map(film => {         
-         const genre_list = film.genre_ids.map(id => genres[id])
-           .filter(el => el);
-         return { ...film, genre_list }
-       });
-       films.results = fullResults;
-       return films;
+
+       const movies = results.map(({ poster_path, original_title, genre_ids, release_date, vote_average, id, name, original_name,...rest}) => {
+         const genreList = genre_ids.map(id => {
+           return genres[id]
+         })
+           .filter(elem => elem)
+        //  console.log(rest)
+         return {
+           poster_path,
+           original_title:original_title?original_title:original_name?original_name:name?name:title?title:''
+           , genreList, release_date, vote_average, id,
+         }
+         })
+      //  const fullResults = results.map(film => {
+      //    if (film.original_name) {
+      //      film.original_title = film.original_name
+      //    }
+      //    const genre_list = film.genre_ids.map(id => genres[id])
+      //      .filter(el => el);
+      //    return { original_title, genre_list }
+      //  });
+      //  films.results = fullResults;
+      //  return films;
       //  const requireItems = results.map(({ poster_path, original_title, genre_ids, release_date, vote_average, id }) =>
       //    ({ poster_path, original_title, genre_ids, release_date, vote_average, id }))
       //  return requireItems;
+       return movies;
      } catch (error) {
        return error;
      }
@@ -56,12 +74,11 @@ class MovieHttpService {
       }, {})
       return genresMap;
     }
-
   //   getFullURL({ endpoint, options = "" }) {
   //       const fullURL = `${MovieHttpService.BASE_URL}/${endpoint}?api_key=${MovieHttpService.API_KEY}&${options}`;
   //       return fullURL;
   // }
-  
+
 //   createOptions(pagenumber = 1,search = '') {
 // // опшенс для серч,опшенс для ключевого слова,опшенс для поиску по айди
 // // возвращает строку
@@ -72,11 +89,3 @@ class MovieHttpService {
 
 export default MovieHttpService;
 
-
-// const fetchUrl = new MovieHttpService()
-
-// fetchUrl.get({ endpoint: 'trending/all/day', options: { page: 1, query: "" } })
-// .then(
-// res =>
-//   console.log(res)
-// )
