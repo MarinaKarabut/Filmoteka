@@ -7,6 +7,8 @@ const movieHttpService = new MovieHttpService();
 function createPagination(totalPages, filmsContainer) {
 //1 создать HTML разметку пагинации +
     const paginationTmpl = paginationTemplate()
+    console.log(paginationTemplate());
+    filmsContainer.insertAdjacentHTML('afterend', paginationTmpl);
 //2 повесить на разметку событие, которое отправляет аякс запрос на получение следующей страницы, получает ответ и
 // передает ответ в функцию renderFilms
     /*
