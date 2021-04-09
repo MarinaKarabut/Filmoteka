@@ -15,6 +15,7 @@ refs.searchForm.addEventListener('submit', onSearch)
 function onSearch(e) {
     e.preventDefault()
     const filmsValue = e.currentTarget.elements.query.value;
+
     const filmsResponse = searchFilm(filmsValue)
     filmsResponse
       .then(movies => {
@@ -29,10 +30,10 @@ function onSearch(e) {
             }, 2000);
           } else {
             clearMarkupMovieCard()
-            renderMarkupMovieCard(movies) 
+            renderMarkupMovieCard(movies)
           }
 
-            
+
         })
 
 }
