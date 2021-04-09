@@ -8,8 +8,11 @@ function openModal(modalContent) {
     modalContentRef.innerHTML = modalContent;
     //  найти внутри модалки "добавить в просмотренные - addToWatched()" , "добавить в планы - addToQueue()" и повесить
     // слушатели которые добавляет в localStorage id фильмов
+
+    
     backdrop.classList.add('is-open');
     modal.classList.add('is-open');
+
 }
 
 export default openModal;

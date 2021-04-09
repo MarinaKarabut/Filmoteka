@@ -3,6 +3,7 @@ import createPagination from './createPagination.js';
 
 function renderFilms(films, filmsContainer) {
     filmsContainer.innerHTML = filmListTemplate(films.results);
+
     const pagination = createPagination(films.total_pages, filmsContainer);
     filmsContainer.after(pagination);
 }
