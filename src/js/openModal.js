@@ -10,6 +10,7 @@ function openModal(modalContent) {
     // слушатели которые добавляет в localStorage id фильмов
     backdrop.classList.add('is-open');
     modal.classList.add('is-open');
+
 }
 
 export default openModal;
