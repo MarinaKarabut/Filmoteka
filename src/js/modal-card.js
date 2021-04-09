@@ -28,8 +28,6 @@ function getFilmById(id) {
     }))
 }
 
-console.log(getFilmById(791373))
-
 refs.gallery.addEventListener('click', onClickGallery)
 
 function onClickGallery(e) {
@@ -48,24 +46,24 @@ function onClickGallery(e) {
   })
 }
 
-refs.buttonClose.addEventListener('click', callbackClose)
+// refs.buttonClose.addEventListener('click', callbackClose)
 
-function callbackClose() {
-  refs.modal.classList.remove('is-open')
-}
+// function callbackClose() {
+//   refs.modal.classList.remove('is-open')
+// }
 
-overlay.addEventListener('click', onClickOverlay)
+// overlay.addEventListener('click', onClickOverlay)
 
-function onClickOverlay(event) {
-  if (event.target === event.currentTarget) {
-    callbackClose()
-  }
-}
+// function onClickOverlay(event) {
+//   if (event.target === event.currentTarget) {
+//     callbackClose()
+//   }
+// }
 
-window.addEventListener('keydown', escapeClose)
+// window.addEventListener('keydown', escapeClose)
 
-function escapeClose(event) {
-  if (event.code === 'Escape') {
-    callbackClose()
-  }
-}
+// function escapeClose(event) {
+//   if (event.code === 'Escape') {
+//     callbackClose()
+//   }
+// }
