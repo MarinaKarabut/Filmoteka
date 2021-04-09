@@ -7,7 +7,7 @@ const movieHttpService = new MovieHttpService();
 function showFilmInfo(e) {
     e.preventDefault();
     const { target } = e;
-    if (target.classList.contains('')) {
+    if (target.classList.contains('подставить класс img')) {
         const { filmId } = target.dataset;
 
         // data --> вызвать обьект movieHttpService и получить результат ответа (объект фильмов)
