@@ -10,8 +10,8 @@ function openModal(modalContent) {
   // слушатели которые добавляет в localStorage id фильмов
   backdrop.classList.add('is-open')
   modal.classList.add('is-open')
-  const btnWatched = document.querySelector('.')
-  const btnQueue = document.querySelector('.')
+  const btnWatched = document.querySelector('.btn-watched')
+  const btnQueue = document.querySelector('.btn-queue')
   btnWatched.addEventListener('click', addToWatched)
   btnQueue.addEventListener('click', addToQueue)
 }

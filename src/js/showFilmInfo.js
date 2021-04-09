@@ -8,8 +8,8 @@ function showFilmInfo(e) {
   const {target} = e
   if (target.classList.contains('is-open')) {
     const {filmId} = target.dataset
-    console.log(filmId)
-    const data = movieHttpService.XXXXXXX(filmId)
+
+    const data = movieHttpService.XXXXXXXPORNXXXXXXXXXXXX(filmId)
     // data --> вызвать обьект movieHttpService и получить результат ответа (объект фильмов)
     // Передаем data в темплейт для создания разметки.
     const filmInfo = filmInfoTemplate(data)
