@@ -46,7 +46,5 @@ window.addEventListener('DOMContentLoaded', async () => {
   const closeModalBtn = refs.modalWindow.querySelector('.modal-btn__icon');
   closeModalBtn.addEventListener('click', closeModal);
 
-  const formSearchFilm = document.getElementById('search-film');
-  formSearchFilm.addEventListener('submit', searchFormHandler);
 })
 
