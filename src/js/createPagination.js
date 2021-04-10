@@ -14,7 +14,6 @@ function createPagination(totalPages, filmsContainer) {
      if(window.innerWidth < 768) {
         if (page > 3) {
             const currentPageIndex = arr.indexOf(page);
-            const number = currentPageIndex - 2;
 
             const pagination = [currentPageIndex - 1, currentPageIndex, currentPageIndex + 1, currentPageIndex + 2,currentPageIndex + 3]
 
@@ -78,6 +77,20 @@ function createPagination(totalPages, filmsContainer) {
         paginationContainer.remove()
         renderFilms(films, filmsContainer)
     })
+
+
+
+    const arrowLeft = document.getElementById('arrow-left')
+    const arrowRight = document.getElementById('arrow-right')
+
+    // if (page === 1) {
+    //     arrowLeft.setAttribute('disabled', 'disabled')
+    // } else {
+    //     arrowLeft.removeAttribute('disabled')
+    // }
+   
+
+
 
     return paginationContainer;
 }
