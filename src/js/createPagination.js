@@ -11,32 +11,56 @@ function createPagination(totalPages, filmsContainer) {
     const paginationContainer = document.createElement("div");
     paginationContainer.classList.add("pagination-container");
     const arr = new Array(totalPages).fill("").map((item, index) => index + 1);
+     if(window.innerWidth < 768) {
+        if (page > 3) {
+            const currentPageIndex = arr.indexOf(page);
+            const number = currentPageIndex - 2;
 
-    if (page > 4) {
-        const currentPageIndex = arr.indexOf(page);
-        const number = currentPageIndex - 3;
-        arr.splice(1, number, '...')
-    }
+            const pagination = [currentPageIndex - 1, currentPageIndex, currentPageIndex + 1, currentPageIndex + 2,currentPageIndex + 3]
+
+            arr.splice(0, totalPages, ...pagination)
+        }
     
-    if (page < totalPages - 3) {
-        const currentPageIndex = arr.indexOf(page);
-        arr.splice(currentPageIndex + 3, totalPages - page - 3, "...");
-    }
-    paginationContainer.innerHTML = paginationTemplate({ list: arr });
+        if (page < totalPages - 2) {
+            const currentPageIndex = arr.indexOf(page);
+            arr.splice(currentPageIndex + 3, totalPages - page - 2);
+        }
+        paginationContainer.innerHTML = paginationTemplate({ list: arr });
+    } else {
+        if (page > 4) {
+            const currentPageIndex = arr.indexOf(page);
+            const number = currentPageIndex - 3;
+            arr.splice(1, number, '...')
+        }
     
+        if (page < totalPages - 3) {
+            const currentPageIndex = arr.indexOf(page);
+            arr.splice(currentPageIndex + 3, totalPages - page - 3, "...");
+        }
+        paginationContainer.innerHTML = paginationTemplate({ list: arr });
+    }
 
     const pagBtns = paginationContainer.querySelectorAll('.pagination-button')
-    pagBtns.forEach(pagBtn => {
-        if (+pagBtn.textContent === page) {
-            return pagBtn.classList.add('current-page')
-        }
-        if (pagBtn.textContent === '...') {
-            pagBtn.classList.replace('pagination-button', 'dots')
-        }
-    })
+        pagBtns.forEach(pagBtn => {
+            if (+pagBtn.textContent === page) {
+                return pagBtn.classList.add('current-page')
+            }
+            if (pagBtn.textContent === '...') {
+                pagBtn.classList.replace('pagination-button', 'dots')
+            }
+         })
+    
 
     paginationContainer.addEventListener('click', async function (e) {
         e.preventDefault()
+
+        const gallery = document.querySelector('.js-gallery-movies')
+
+        window.scrollTo({
+            top: gallery.offsetTop - 30 ,
+            behavior: 'smooth'
+            
+        })
         if (e.target.id === 'arrow-left') {
             if (filmsSearchOptions.options.page > 1) {
                 filmsSearchOptions.options.page -= 1
