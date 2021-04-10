@@ -48,7 +48,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     MovieHttpService.setGenres(genres);
 
     const films = await movieHttpService.get(filmsSearchOptions);
-
     renderFilms(films, galleryList);
 
     galleryList.addEventListener('click', showFilmInfo);

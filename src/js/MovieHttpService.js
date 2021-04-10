@@ -7,12 +7,11 @@ class MovieHttpService {
   static API_KEY = "923c2cf88ec4338da74c768a045101f0";
 
   static setGenres(genres) {
-    MovieHttpService.genres = genres;
+    MovieHttpService.genres = genres
   }
 
   constructor() {
   }
-
   async get({ endpoint, options: {page, query}}) {
     try {
       const { data: films } = await axios.get(endpoint, {
@@ -27,11 +26,11 @@ class MovieHttpService {
       const { results } = films;
       const genres = MovieHttpService.genres;
       const movies = results.map(({ poster_path, original_title, genre_ids, release_date, vote_average, id, name, original_name, first_air_date, ...rest }) => {
-        const newPosterPath = poster_path ? `https://image.tmdb.org/t/p/w300/${poster_path}` : defaultImg;
+        const newPosterPath = poster_path ? `https://image.tmdb.org/t/p/w300/${poster_path}` : defaultImg
         const realeseData = release_date || first_air_date;
         const [newRelease_date] = realeseData.split("-");
         const genreList = genre_ids.map(id => {
-          return genres[id];
+          return genres[id]
         })
           .filter(elem => elem).slice(0, 3);
         return {
@@ -44,7 +43,6 @@ class MovieHttpService {
      } catch (error) {
        return error;
      }
-        // вернуть ответ, в котором в каждом фильме будет своство genres = ["Жанр", "Жанр"]
     }
     async getAllGenres() {
       const { data: {genres} } = await axios.get("genre/movie/list", {
@@ -60,16 +58,15 @@ class MovieHttpService {
       return genresMap;
     }
 
-
-  async getFilmId(id) {
-      const filmIdRequest = await axios.get(`/movie/${id}`, {
+    getFilmId(id) {
+      const filmIdRequest = axios.get(`/movie/${id}`, {
         params: {
           api_key: MovieHttpService.API_KEY,
-        }
+        },
       });
-      filmIdRequest
-        .then(result => { return console.log(result); });
-      }
-
-}
-export default MovieHttpService;
+      return filmIdRequest.then(result => {
+        return result;
+      });
+     }
+  }
+  export default MovieHttpService;
