@@ -34,8 +34,10 @@ window.addEventListener('DOMContentLoaded', async () => {
   const galleryList = main.querySelector('.js-gallery-movies');
 
   try {
+    //loader добавляю
     const films = await movieHttpService.get(filmsSearchOptions);
     renderFilms(films, galleryList);
+    //loader удаляю
 
     galleryList.addEventListener('click', showFilmInfo);
   }

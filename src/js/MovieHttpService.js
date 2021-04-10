@@ -20,7 +20,7 @@ class MovieHttpService {
         const genreList = genre_ids.map(id => {
           return genres[id]
         })
-          .filter(elem => elem).slice(0, 3);
+          .filter(elem => elem).slice(0, 3).join(", ");
         return {
           poster_path: newPosterPath,
           original_title: original_title || original_name || name || title || `undefined tittle`
