@@ -28,6 +28,7 @@
     font-size: 12px;
     line-height: 1.33;
     margin-top: 10px;
+    cursor: pointer;
   }
   &-info {
     @include flex(start, center);

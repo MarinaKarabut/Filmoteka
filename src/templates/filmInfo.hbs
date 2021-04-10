@@ -22,7 +22,9 @@
         </li>
         <li class="film-info__list-item">
             <span class="film-info__list-item__vote">Genre</span>
-            <span class="film-info__list-item__characteristic">{{genreList}}</span>
+            {{#each genres}}
+            <span class="film-info__list-item__characteristic">{{this.name}}</span>
+            {{/each}}
         </li>
     </ul>
 
