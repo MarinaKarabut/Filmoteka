@@ -1,7 +1,7 @@
 .button-container {
   display: flex;
   justify-content: center;
-  padding-top: 45px;
+  padding-top: 48px;
 }
 
 .button {
@@ -31,10 +31,12 @@
 
 .btn-watched-outline:hover {
   background-color: $accent-color;
+  border-color: $accent-color;
 }
 
 .btn-queue-outline:hover {
   background-color: $accent-color;
+  border-color: $accent-color;
 }
 
 @media screen and (min-width: 768) and (min-width: 1200px) {
