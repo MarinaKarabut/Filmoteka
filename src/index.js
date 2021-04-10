@@ -29,16 +29,14 @@ refs.modalWindow.innerHTML = modalWindowTemplate();
 const movieHttpService = new MovieHttpService();
 
 window.addEventListener('DOMContentLoaded', async () => {
-  const galleryList = document.querySelector('.js-gallery-movies');
+  const galleryList = main.querySelector('.js-gallery-movies');
   try {
-    const genres = await movieHttpService.getAllGenres();
-    MovieHttpService.setGenres(genres);
-
     const films = await movieHttpService.get(filmsSearchOptions);
     renderFilms(films, galleryList);
 
     galleryList.addEventListener('click', showFilmInfo);
-  } catch (error) {
+  }
+  catch (error) {
     galleryList.innerHTML = `<p>It's so pitty. No movies were found :( </p>`;
   }
   const closeModalBtn = refs.modalWindow.querySelector('.modal-btn__icon');
