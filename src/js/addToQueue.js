@@ -19,6 +19,7 @@
 const btnQueue = document.querySelector('[data-film-id="1"]')
 
 function addToQueue(e) {
+
     e.preventDefault();
     queueFilmList = [];
   console.log(e);
@@ -33,3 +34,14 @@ function addToQueue(e) {
 // btnQueue.addEventListener('click',addToQueue);
 
 export default addToQueue;
+
+  const addedFilmsId = []
+  const imgCard = document.querySelector('.film-info__img')
+  const {filmId} = imgCard.dataset
+  addedFilmsId.push(filmId)
+  const filmIdStr = JSON.stringify(addedFilmsId)
+  localStorage.setItem('id', filmIdStr)
+
+
+export default addToQueue
+
