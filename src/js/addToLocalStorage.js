@@ -1,6 +1,4 @@
 
-
-
 // refs.btnAddToWatched.addEventListener('click', onClickBtn)
 // refs.btnAddToQueue.addEventListener('click', addToQueue)
 

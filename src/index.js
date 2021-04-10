@@ -1,11 +1,10 @@
 import './sass/main.scss'
 
-
 import MovieHttpService from './js/MovieHttpService'
 import renderFilms from './js/renderFilms'
 import showFilmInfo from './js/showFilmInfo'
 import closeModal from './js/closeModal'
-import searchFormHandler from './js/searchFormHandler.js'
+import addHeaderMenuEventListener from './js/header'
 
 import headerTemplate from './templates/header-main.hbs'
 import movieGalleryTemplate from './templates/movie-gallery.hbs'
@@ -39,6 +38,9 @@ const filmsSearchOptions = {
 }
 
 window.addEventListener('DOMContentLoaded', async () => {
+
+  addHeaderMenuEventListener()
+  
   const galleryList = document.querySelector('.js-gallery-movies')
   try {
     const genres = await movieHttpService.getAllGenres()
@@ -50,11 +52,11 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     galleryList.addEventListener('click', showFilmInfo)
   } catch (error) {
-    galleryList.innerHTML = `<p>It's so pitty. No movies were found :( </p>`
+    galleryList.innerHTML = `<p>It's so pitty. No movies were found :( </p>`;
   }
-  const closeModalBtn = refs.modalWindow.querySelector('.modal-btn__icon')
-  closeModalBtn.addEventListener('click', closeModal)
+  const closeModalBtn = refs.modalWindow.querySelector('.modal-btn__icon');
+  closeModalBtn.addEventListener('click', closeModal);
 
-  const formSearchFilm = document.getElementById('search-film')
-  formSearchFilm.addEventListener('submit', searchFormHandler)
+  const formSearchFilm = document.getElementById('search-film');
+  formSearchFilm.addEventListener('submit', searchFormHandler);
 })

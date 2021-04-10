@@ -1,6 +1,7 @@
 .button-container {
   display: flex;
   justify-content: center;
+  padding-top: 45px;
 }
 
 .button {
@@ -40,7 +41,4 @@
   .button {
     width: 136px;
   }
-}
-.is-hidden {
-  display: none;
 }
