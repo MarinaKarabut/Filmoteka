@@ -1,9 +1,9 @@
 import './sass/main.scss';
 
 import MovieHttpService from './js/MovieHttpService';
-import renderFilms from './js/renderFilms';
-import showFilmInfo from './js/showFilmInfo';
-import closeModal from './js/closeModal';
+import renderFilms from './js/renderFilms.js';
+import showFilmInfo from './js/showFilmInfo.js';
+import closeModal from './js/closeModal.js';
 import searchFormHandler from './js/searchFormHandler.js';
 import filmsSearchOptions from "./js/filmOptions.js";
 
@@ -11,7 +11,6 @@ import headerTemplate from './templates/header-main.hbs';
 import movieGalleryTemplate from './templates/movie-gallery.hbs';
 import footerTemplate from './templates/footer.hbs';
 import modalWindowTemplate from './templates/modal-window.hbs';
-
 
 import footerSrc from './images/sprite.svg';
 
@@ -25,11 +24,6 @@ const refs = {
 refs.header.innerHTML = headerTemplate();
 refs.main.innerHTML = movieGalleryTemplate();
 refs.footer.innerHTML = footerTemplate({ src: footerSrc });
-refs.modalWindow.innerHTML = modalWindowTemplate();
-
-refs.header.innerHTML = headerTemplate();
-refs.main.innerHTML = movieGalleryTemplate();
-refs.footer.innerHTML = footerTemplate({src: footerSrc});
 refs.modalWindow.innerHTML = modalWindowTemplate();
 
 const movieHttpService = new MovieHttpService();

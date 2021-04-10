@@ -7,7 +7,7 @@ class MovieHttpService {
   static API_KEY = '923c2cf88ec4338da74c768a045101f0'
 
   static setGenres(genres) {
-    MovieHttpService.genres = genres
+    MovieHttpService.genres = genres;
   }
 
   async get({endpoint, options: {page, query}}) {
