@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function addToQueue(e) {
   const addedFilmsId = []
   const imgCard = document.querySelector('.film-info__img')
@@ -9,7 +8,6 @@ function addToQueue(e) {
 }
 
 export default addToQueue;
-=======
 
   // 1. Считать значение data-film-id из this.dataset
     // 2. считать значение queueFilmList из localstorage
@@ -53,6 +51,3 @@ const btnQueue = document.querySelector('[data-film-id="1"]')
 //   addedFilmsId.push(filmId)
 //   const filmIdStr = JSON.stringify(addedFilmsId)
 //   localStorage.setItem('id', filmIdStr)
-
-
->>>>>>> dev
