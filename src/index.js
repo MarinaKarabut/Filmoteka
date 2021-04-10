@@ -13,6 +13,8 @@ import headerTemplate from './templates/header-main.hbs'
 import movieGalleryTemplate from './templates/movie-gallery.hbs'
 import footerTemplate from './templates/footer.hbs'
 import modalWindowTemplate from './templates/modal-window.hbs'
+import createElement from './js/createElement.js';
+import { loader} from './js/loader.js'
 
 import footerSrc from './images/sprite.svg'
 
@@ -32,13 +34,16 @@ const movieHttpService = new MovieHttpService()
 
 window.addEventListener('DOMContentLoaded', async () => {
   addHeaderMenuEventListener()
-  const galleryList = main.querySelector('.js-gallery-movies')
+  const galleryList = refs.main.querySelector('.js-gallery-movies')
 
   try {
-
-    //loader добавляю
+    const newLoader = createElement(loader)
+    galleryList.insertAdjacentElement('afterbegin', newLoader)
     const films = await movieHttpService.get(filmsSearchOptions);
+    newLoader.remove()
     renderFilms(films, galleryList);
+    
+
     //loader удаляю
 
 

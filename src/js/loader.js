@@ -1,6 +1,6 @@
 export const loader = {
     tag: 'div',
-    className: 'mask',
+    classList: 'mask',
     content: `<div class="loader"></div>`,
 }
 

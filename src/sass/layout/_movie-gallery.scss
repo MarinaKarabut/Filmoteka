@@ -11,6 +11,7 @@
 .js-gallery-movies {
   @include grid(274px, auto-fill);
   grid-gap: 30px;
+  position: relative;
 }
 .movie-card {
   &-img {
