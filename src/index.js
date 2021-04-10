@@ -3,7 +3,7 @@ import './sass/main.scss'
 import MovieHttpService from './js/MovieHttpService'
 import renderFilms from './js/renderFilms'
 import showFilmInfo from './js/showFilmInfo'
-import closeModal from './js/closeModal'
+import {closeModal, onClickOverlay, escapeClose} from './js/closeModal'
 import addHeaderMenuEventListener from './js/header'
 import filmsSearchOptions from './js/filmOptions.js'
 
@@ -43,4 +43,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   const closeModalBtn = refs.modalWindow.querySelector('.modal-btn__icon')
   closeModalBtn.addEventListener('click', closeModal)
+
+  const overlay = document.querySelector('.backdrop')
+  overlay.addEventListener('click', onClickOverlay)
+
+  window.addEventListener('keydown', escapeClose)
 })

@@ -56,14 +56,14 @@
     background-color: $secondary-color;
     text-align: center;
     text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
 
     &:hover,
     &:focus {
-      border: none;
-
-      outline: none;
-      background-color: var(--accent-color);
-      color: var(--secondary-color);
+      border-color: $accent-color;
+      background-color: $accent-color;
+      color: $secondary-color;
     }
 
     &:not(:last-child) {

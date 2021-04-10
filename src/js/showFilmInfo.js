@@ -11,9 +11,9 @@ function showFilmInfo(e) {
   if (target.classList.contains('js-open-modal')) {
     const {filmId} = target.dataset
 
-    const data = movieHttpService.getFilmId(filmId)
-    data.then(result => {
-      const filmInfo = filmInfoTemplate(result.data)
+    const data = movieHttpService.getFilmById(filmId)
+    data.then(({data}) => {
+      const filmInfo = filmInfoTemplate(data)
       openModal(filmInfo)
     })
   }

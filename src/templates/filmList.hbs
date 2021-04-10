@@ -1,8 +1,7 @@
 {{#each this}}
 <li class="gallery-movie-item">
 
-    <img class="movie-card-img js-open-modal" src="https://image.tmdb.org/t/p/w300{{poster_path}}" alt="{{title}}"
-        data-film-id="{{id}}" />
+    <img class="movie-card-img js-open-modal" src="{{poster_path}}" alt="{{title}}" data-film-id="{{id}}" />
     <h3 class="movie-card-title js-open-modal" data-film-id="{{id}}">{{original_title}}</h3>
 
     <div class="movie-card-info">
