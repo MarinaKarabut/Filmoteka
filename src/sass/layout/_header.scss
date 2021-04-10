@@ -13,11 +13,13 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: $primary-color;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url('../images/mobile/mobile-header-home.jpg');
 
-  &.is-hidden-backgr {
+  background-color: var(--primary-color);
+  &.header-home-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url('../images/mobile/mobile-header-home.jpg');
+  }
+  &.header-my-library-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('../images/mobile/mobile-header-library.jpg');
   }
@@ -72,10 +74,13 @@
   }
 
   .section-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../images/tablet/tablet-header-home.jpg');
+    &.header-home-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/tablet/tablet-header-home.jpg');
+    }
+
     @include tablet-end {
-      &.is-hidden-backgr {
+      &.header-my-library-bg {
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
           url('../images/tablet/tablet-header-library.jpg');
       }
@@ -100,17 +105,21 @@
 }
 
 @include tablet-end {
-  .section-header.is-hidden-backgr {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../images/tablet/tablet-header-library.jpg');
+  .section-header {
+    &.header-my-library-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/tablet/tablet-header-library.jpg');
+    }
   }
 }
 @include desktop {
   .section-header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url('../images/desktop/desktop-header-home.jpg');
+    &.header-home-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url('../images/desktop/desktop-header-home.jpg');
+    }
 
-    &.is-hidden-backgr {
+    &.header-my-library-bg {
       background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url('../images/desktop/desktop-header-library.jpg');
     }
