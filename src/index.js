@@ -14,7 +14,6 @@ import filmsSearchOptions from "./js/filmOptions.js";
 // import './js/searchMovies.js';
 // import './js/pagination.js';
 
-
 import headerTemplate from './templates/header-main.hbs'
 import movieGalleryTemplate from './templates/movie-gallery.hbs'
 import footerTemplate from './templates/footer.hbs'
@@ -35,8 +34,6 @@ refs.footer.innerHTML = footerTemplate({src: footerSrc})
 refs.modalWindow.innerHTML = modalWindowTemplate()
 
 const movieHttpService = new MovieHttpService()
-
-
 
 window.addEventListener('DOMContentLoaded', async () => {
   const galleryList = document.querySelector('.js-gallery-movies')
