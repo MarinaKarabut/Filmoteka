@@ -7,7 +7,6 @@ import closeModal from './js/closeModal'
 import addHeaderMenuEventListener from './js/header'
 import filmsSearchOptions from "./js/filmOptions.js";
 
-
 import headerTemplate from './templates/header-main.hbs';
 import movieGalleryTemplate from './templates/movie-gallery.hbs';
 import footerTemplate from './templates/footer.hbs';

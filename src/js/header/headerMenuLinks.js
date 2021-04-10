@@ -1,6 +1,6 @@
 import formHeaderTemplate from '../../templates/formHeader.hbs'
 import buttonsHeaderTemplate from '../../templates/buttonsHeader.hbs'
-import { onFilmSearch } from "./onFilmSearch";
+import { searchFormHandler } from "./searchFormHandler";
 import {onFilmAction} from "./onFilmAction"
 
 export const headerMenuLinks = [
@@ -9,7 +9,7 @@ export const headerMenuLinks = [
         template: formHeaderTemplate,
         selector: "#search-film",
         actionType: "submit",
-        listener: onFilmSearch,
+        listener: searchFormHandler,
         headerClass: "header-home-bg",
     },
     {
