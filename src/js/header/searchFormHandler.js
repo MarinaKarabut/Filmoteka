@@ -1,12 +1,12 @@
-import MovieHttpService from './MovieHttpService.js';
-import renderFilms from './renderFilms.js';
-import filmsSearchOptions from "./filmOptions.js";
-import createElement from './createElement';
-import { errorMessageProps } from "./erorrMessagePtops";
+import MovieHttpService from '../MovieHttpService.js';
+import renderFilms from '../renderFilms.js';
+import filmsSearchOptions from "../filmOptions.js";
+import createElement from '../createElement';
+import { errorMessageProps } from "../erorrMessagePtops";
 
 const movieHttpService = new MovieHttpService();
 
-async function searchFormHandler(e) {
+export async function searchFormHandler(e) {
   e.preventDefault();
   const galleryList = document.querySelector('.js-gallery-movies');
   const searchField = this.querySelector("[name=query]");
@@ -38,6 +38,3 @@ async function searchFormHandler(e) {
     this.reset()
   }
 }
-
-
-export default searchFormHandler;
