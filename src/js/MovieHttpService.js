@@ -1,17 +1,21 @@
 import defaultImg from '../images/desktop/404.jpeg'
 const axios = require("axios");
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
+
 class MovieHttpService {
   static BASE_URL = "https://api.themoviedb.org/3";
   static API_KEY = "923c2cf88ec4338da74c768a045101f0";
+
   static setGenres(genres) {
-    MovieHttpService.genres = genres;
+    MovieHttpService.genres = genres
   }
+
   constructor() {
   }
   async get({ endpoint, options: {page, query}}) {
     try {
       const { data: films } = await axios.get(endpoint, {
+
         params: {
           page,
           query,
@@ -54,6 +58,17 @@ class MovieHttpService {
         return acc
       }, {})
       return genresMap;
+    }
+
+   getFilmId(id) {
+      const filmIdRequest = axios.get(`/movie/${id}`, {
+        params: {
+          api_key: MovieHttpService.API_KEY,
+        },
+      })
+      return filmIdRequest.then(result => {
+        return result
+      })
     }
 }
 export default MovieHttpService;
