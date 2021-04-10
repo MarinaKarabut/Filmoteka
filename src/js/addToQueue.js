@@ -17,6 +17,11 @@ export default addToQueue;
     // 6. сохранить строку queueFilmList в localstorage
 
 
+    function addToQueue(e) {
+
+
+
+}
 
 
     // const addedFilmsId = [];
@@ -26,24 +31,8 @@ export default addToQueue;
     // const filmIdStr = JSON.stringify(addedFilmsId);
     // localStorage.setItem('id', filmIdStr);
 
-const btnQueue = document.querySelector('[data-film-id="1"]')
 
-// function addToQueue(e) {
-
-//     e.preventDefault();
-//     queueFilmList = [];
-//   console.log(e);
-//     const { filmId } = e.dataset;
-
-// }
-
-
-
-// const btnQueue = document.querySelector('.btn-queue');
-
-// btnQueue.addEventListener('click',addToQueue);
-
-// export default addToQueue;
+export default addToQueue;
 
 //   const addedFilmsId = []
 //   const imgCard = document.querySelector('.film-info__img')
@@ -51,3 +40,4 @@ const btnQueue = document.querySelector('[data-film-id="1"]')
 //   addedFilmsId.push(filmId)
 //   const filmIdStr = JSON.stringify(addedFilmsId)
 //   localStorage.setItem('id', filmIdStr)
+
