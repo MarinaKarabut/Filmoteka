@@ -78,20 +78,6 @@ function createPagination(totalPages, filmsContainer) {
         renderFilms(films, filmsContainer)
     })
 
-
-
-    const arrowLeft = document.getElementById('arrow-left')
-    const arrowRight = document.getElementById('arrow-right')
-
-    // if (page === 1) {
-    //     arrowLeft.setAttribute('disabled', 'disabled')
-    // } else {
-    //     arrowLeft.removeAttribute('disabled')
-    // }
-   
-
-
-
     return paginationContainer;
 }
 export default createPagination;
