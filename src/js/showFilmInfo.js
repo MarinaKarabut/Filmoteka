@@ -1,27 +1,22 @@
-import MovieHttpService from './MovieHttpService.js';
-import filmInfoTemplate from '../templates/filmInfo.hbs';
-import openModal from './openModal.js';
-const movieHttpService = new MovieHttpService();
+import MovieHttpService from './MovieHttpService.js'
+import filmInfoTemplate from '../templates/filmInfo.hbs'
+import openModal from './openModal.js'
+const movieHttpService = new MovieHttpService()
 
 function showFilmInfo(e) {
-  e.preventDefault();
+  e.preventDefault()
 
-  const { target } = e;
+  const {target} = e
 
-  if (target.classList.contains('movie-card-img')) {
-    const { filmId } = target.dataset;
+  if (target.classList.contains('js-open-modal')) {
+    const {filmId} = target.dataset
 
-
-    const data = movieHttpService.getFilmId(filmId);
-    data.then(result => {
-
-      const filmInfo = filmInfoTemplate(result.data);
-      openModal(filmInfo);
-    });
-
+    const data = movieHttpService.getFilmById(filmId)
+    data.then(({data}) => {
+      const filmInfo = filmInfoTemplate(data)
+      openModal(filmInfo)
+    })
   }
 }
 
-export default showFilmInfo;
-
-
+export default showFilmInfo

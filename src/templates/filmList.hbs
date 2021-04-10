@@ -1,7 +1,9 @@
 {{#each this}}
 <li class="gallery-movie-item">
-    <img class="movie-card-img" src="{{poster_path}}" alt="{{title}}" data-film-id="{{id}}" />
-    <h3 class="movie-card-title">{{original_title}}</h3>
+
+    <img class="movie-card-img js-open-modal" src="{{poster_path}}" alt="{{title}}" data-film-id="{{id}}" />
+    <h3 class="movie-card-title js-open-modal" data-film-id="{{id}}">{{original_title}}</h3>
+
     <div class="movie-card-info">
         <p class="movie-card-genre">{{genreList}}</p>
         <p class="movie-card-release-year">{{release_date}}</p>

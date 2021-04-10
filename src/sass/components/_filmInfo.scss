@@ -56,10 +56,12 @@
     background-color: $secondary-color;
     text-align: center;
     text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
 
     &:hover,
     &:focus {
-      border: none;
+      border-color: $accent-color;
       background-color: $accent-color;
       color: $secondary-color;
     }
