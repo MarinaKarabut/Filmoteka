@@ -1,6 +1,8 @@
 import MovieHttpService from './MovieHttpService.js';
 import renderFilms from './renderFilms.js';
-import showFilmInfo from './showFilmInfo.js';
+import filmsSearchOptions from "./filmOptions.js";
+import createElement from './createElement';
+import { errorMessageProps } from "./erorrMessagePtops";
 
 const movieHttpService = new MovieHttpService();
 
@@ -9,22 +11,20 @@ async function searchFormHandler(e) {
   const galleryList = document.querySelector('.js-gallery-movies');
   const searchField = this.querySelector("[name=query]");
   const search = searchField.value;
-  const filmsSearchOptions = {
-    endpoint: 'search/movie',
-    options: {
+
+  try {
+    filmsSearchOptions.endpoint = 'search/movie';
+    filmsSearchOptions.options = {
       page: 1,
       query: search
-    }
-  };
-  try {
+    };
+
     const films = await movieHttpService.get(filmsSearchOptions);
-    if (!films.length) {
-      const errorMsg = document.createElement("p");
-      errorMsg.classList.add("error-message");
-      errorMsg.textContent = 'Search result not successful. Enter the correct movie name';
-      searchField.after(errorMsg);
+    if (!films.results.length) {
+      const errMsg = createElement(errorMessageProps);
+      searchField.after(errMsg);
       setTimeout(() => {
-        errorMsg.remove();
+        errMsg.remove();
       }, 2000);
     } else {
       renderFilms(films, galleryList);
@@ -32,13 +32,11 @@ async function searchFormHandler(e) {
   }
   catch (error) {
     console.log(error);
+    return error;
   }
   finally {
-    searchField.value = '';
+    this.reset()
   }
-    // переписать свойство endpoint глобального объекта filmsSearchOptions на search
-    // вызвать метод объекта movieHttpService
-    // вызвать функцию renderFilms и передать в нее результат ответа из movieHttpService
 }
 
 

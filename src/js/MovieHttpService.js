@@ -27,7 +27,8 @@ class MovieHttpService {
           , genreList, realeseData: newRelease_date, vote_average, id,
         };
       });
-       return movies;
+      films.results = movies;
+       return films;
      } catch (error) {
        return error;
      }
