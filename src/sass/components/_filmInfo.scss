@@ -60,6 +60,7 @@
     &:hover,
     &:focus {
       border: none;
+      outline: none;
       background-color: var(--accent-color);
       color: var(--secondary-color);
     }

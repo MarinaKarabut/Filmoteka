@@ -8,7 +8,7 @@ function showFilmInfo(e) {
 
   const {target} = e
 
-  if (target.classList.contains('movie-card-img')) {
+  if (target.classList.contains('js-open-modal')) {
     const {filmId} = target.dataset
 
     const data = movieHttpService.getFilmId(filmId)
