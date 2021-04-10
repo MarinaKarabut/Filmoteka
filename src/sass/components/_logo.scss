@@ -5,12 +5,12 @@
     display: inline-block;
     font-weight: 500;
     font-size: 30px;
-    color: #ffffff;
+    color: $secondary-color;
     font-family: 'Roboto', sans-serif;
     transition: color 250ms linear;
 
     &:hover {
-      color: #ff6b08;
+      color: $accent-color;
       animation-duration: 2.5s;
       animation-fill-mode: both;
       animation-iteration-count: infinite;
@@ -22,7 +22,7 @@ svg {
   transition: color 250ms linear;
 }
 svg:hover path {
-  stroke: #ff6b08;
+  stroke: $accent-color;
 }
 
 .rubberBand {
