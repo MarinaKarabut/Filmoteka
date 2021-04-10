@@ -1,17 +1,22 @@
 .cards-movies {
-  padding-top: 60px;
-  padding-bottom: 71px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+@include tablet {
+  .cards-movies {
+    padding-top: 60px;
+    padding-bottom: 71px;
+  }
 }
 .js-gallery-movies {
   @include grid(274px, auto-fill);
-  // grid-template-rows: repeat(auto-fill, minmax(440px, 1fr));
   grid-gap: 30px;
 }
-
 .movie-card {
   &-img {
     border-radius: 5px;
     width: 100%;
+    height: 398px;
     transition: transform 250ms linear;
     cursor: pointer;
     &:hover {
@@ -25,8 +30,8 @@
     margin-top: 10px;
   }
   &-info {
-    @include flex(center, center);
-    color: #ff6b01; // add colors to variables
+    @include flex(start, center);
+    color: $secondary-accent-color;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
@@ -35,14 +40,14 @@
   }
   &-release-year::before {
     content: '\2758';
-    color: #ff6b01;
+    color: $secondary-accent-color;
     display: inline-block;
     margin-right: 3px;
     margin-left: 3px;
   }
   &-vote {
-    background: #ff6b01;
-    color: #ffffff;
+    background: $secondary-accent-color;
+    color: $secondary-color;
     height: 16px;
     width: 36px;
     border-radius: 5px;
