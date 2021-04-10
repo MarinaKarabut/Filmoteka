@@ -27,8 +27,8 @@
   }
 
   &-content {
-    background-color: #fefefe;
-    color: #000;
+    background-color: $primary-modal-bg-color;
+    color: $primary-color;
     max-width: 848px;
     padding-top: 48px;
     padding-left: 20px;

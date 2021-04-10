@@ -13,11 +13,11 @@
   line-height: 1.3;
   text-transform: uppercase;
 
-  color: #ffffff;
+  color: $secondary-color;
   padding-left: 21px;
   background: transparent;
   border-radius: 5px;
-  border: 1px solid #ffffff;
+  border: 1px solid $secondary-color;
   box-sizing: border-box;
   text-align: center;
   padding: 0;
@@ -29,11 +29,11 @@
 }
 
 .btn-watched-outline:hover {
-  background-color: var(--accent-color);
+  background-color: $accent-color;
 }
 
 .btn-queue-outline:hover {
-  background-color: var(--accent-color);
+  background-color: $accent-color;
 }
 
 @media screen and (min-width: 768) and (min-width: 1200px) {

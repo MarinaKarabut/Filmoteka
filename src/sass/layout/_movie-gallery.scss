@@ -31,7 +31,7 @@
   }
   &-info {
     @include flex(start, center);
-    color: #ff6b01; // add colors to variables
+    color: $secondary-accent-color;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
@@ -40,14 +40,14 @@
   }
   &-release-year::before {
     content: '\2758';
-    color: #ff6b01;
+    color: $secondary-accent-color;
     display: inline-block;
     margin-right: 3px;
     margin-left: 3px;
   }
   &-vote {
-    background: #ff6b01;
-    color: #ffffff;
+    background: $secondary-accent-color;
+    color: $secondary-color;
     height: 16px;
     width: 36px;
     border-radius: 5px;
