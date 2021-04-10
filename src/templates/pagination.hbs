@@ -1,15 +1,7 @@
-<div class="pagination-container">
-    <button id="arrow-left" class="arrow-btn">&lt;</button>
-    <ul id="pagination-list" class="pagination-list">
-        <li id="first-page" class="pagination-item">1</li>
-        <li id="interval1" class="interval">...</li>
-        <li id="prev-sibling2" class="pagination-item"></li>
-        <li id="prev-sibling1" class="pagination-item"></li>
-        <li id="current-page" class="active"></li>
-        <li id="next-sibling1" class="pagination-item"></li>
-        <li id="next-sibling2" class="pagination-item"></li>
-        <li id="interval2" class="interval">...</li>
-        <li id="last-page" class="pagination-item"></li>
-    </ul>
-    <button id="arrow-right" class="arrow-btn">&gt;</button>
+<button id="arrow-left" class="arrow-btn">&lt;</button>
+<div id="pagination-btns" class="pagination-btns">
+    {{#each list}}
+    <button class="pagination-button">{{this}}</button>
+    {{/each}}
 </div>
+<button id="arrow-right" class="arrow-btn">&gt;</button>

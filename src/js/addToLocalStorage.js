@@ -1,14 +1,12 @@
 
-
-
-// refs.btnAddToWatched.addEventListener('click', onClickBtn)
-// refs.btnAddToQueue.addEventListener('click', addToQueue)
+refs.btnAddToWatched.addEventListener('click', onClickBtn)
+refs.btnAddToQueue.addEventListener('click', addToQueue)
 
 function addToWatched(movie) {
     const data = localStorage.getItem('watched')
     const watched = data === null ? [] : JSON.parse(data)// считываем значение, парсим
     watched.push(movie)//обработать полученные данные
-    localStorage.setItem('watched',  JSON.stringify(watched));    
+    localStorage.setItem('watched',  JSON.stringify(watched));
 }
 
 
@@ -16,7 +14,7 @@ function addToQueue(movie) {
     const data = localStorage.getItem('queue')
     const queue = data === null ? [] : JSON.parse(queue)// считываем значение, парсим
     queue.push(movie)//обработать полученные данные
-    localStorage.setItem('queue', JSON.stringify(queue));    
+    localStorage.setItem('queue', JSON.stringify(queue));
  }
 
 function changeBtnAdd() {
@@ -24,7 +22,7 @@ function changeBtnAdd() {
     refs.btnAddToWatched.dataset.type = 'remove'
     refs.btnAddToWatched.style.backgroundColor = 'orange'
 }
- 
+
 function changeBtnRemove() {
     refs.btnAddToWatched.textContent = 'Add to watched'
     refs.btnAddToWatched.dataset.type = 'add'
@@ -43,10 +41,10 @@ function onClickBtn() {
 
 }
 
-// const resetStorage = function () {
-//     localStorage.removeItem('');
-//     localStorage.removeItem('');
-// };
+const resetStorage = function () {
+    localStorage.removeItem('');
+    localStorage.removeItem('');
+};
 
 addToWatched({ arr: 32, id : 38})
 

@@ -1,6 +1,5 @@
 .backdrop {
   position: fixed;
-
   top: 0;
   left: 0;
   width: 100%;
@@ -12,6 +11,12 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal__body.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .modal {
@@ -29,8 +34,8 @@
   }
 
   &-content {
-    background-color: #fefefe;
-    color: #000;
+    background-color: $primary-modal-bg-color;
+    color: $primary-color;
     max-width: 848px;
     padding-top: 48px;
     padding-left: 20px;
@@ -55,10 +60,22 @@
   }
 }
 
-.modal__body.is-open {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
+.film-info__img {
+  width: 240px;
+  height: 356px;
+  margin-bottom: 30px;
+  // mixins
+  @include tablet {
+    width: 264px;
+    height: 374px;
+    margin-right: 32px;
+  }
+
+  @include desktop {
+    width: 396px;
+    height: 478px;
+    margin-right: 30px;
+  }
 }
 
 .backdrop.is-open {

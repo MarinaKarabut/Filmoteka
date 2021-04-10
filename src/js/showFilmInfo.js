@@ -16,8 +16,6 @@ function showFilmInfo(e) {
       const filmInfo = filmInfoTemplate(result.data)
       openModal(filmInfo)
     })
-    // data --> вызвать обьект movieHttpService и получить результат ответа (объект фильмов)
-    // Передаем data в темплейт для создания разметки.
   }
 }
 

@@ -6,7 +6,7 @@
 
   &__list-item {
     &__vote {
-      color: #8c8c8c;
+      color: $vote-color;
       display: inline-block;
       width: 122px;
       margin-right: 30px;
@@ -18,15 +18,15 @@
 
     &__votes {
       padding: 1px 10px;
-      color: var(--secondary-color);
-      background-color: var(--accent-color);
+      color: $secondary-color;
+      background-color: $accent-color;
       border-radius: 5px;
     }
 
     &__count {
       padding: 1px 4px;
-      color: var(--primary-color);
-      background-color: #f7f7f7;
+      color: $primary-color;
+      background-color: $secondary-bg-color;
       border-radius: 5px;
     }
   }
@@ -50,16 +50,17 @@
   }
   &__button {
     padding: 14px 10px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid $primary-color;
     box-sizing: border-box;
     border-radius: 5px;
-    background-color: var(--secondary-color);
+    background-color: $secondary-color;
     text-align: center;
     text-transform: uppercase;
 
     &:hover,
     &:focus {
       border: none;
+
       outline: none;
       background-color: var(--accent-color);
       color: var(--secondary-color);
