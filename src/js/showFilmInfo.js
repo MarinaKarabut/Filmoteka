@@ -1,23 +1,24 @@
-import MovieHttpService from './MovieHttpService.js';
-import filmInfoTemplate from '../templates/filmInfo.hbs';
-import openModal from './openModal.js';
-const movieHttpService = new MovieHttpService();
-
+import MovieHttpService from './MovieHttpService.js'
+import filmInfoTemplate from '../templates/filmInfo.hbs'
+import openModal from './openModal.js'
+const movieHttpService = new MovieHttpService()
 
 function showFilmInfo(e) {
-    e.preventDefault();
-    const { target } = e;
+  e.preventDefault()
 
-    if (target.classList.contains('подставить класс img')) {
+  const {target} = e
 
-        const { filmId } = target.dataset;
+  if (target.classList.contains('movie-card-img')) {
+    const {filmId} = target.dataset
 
-        // data --> вызвать обьект movieHttpService и получить результат ответа (объект фильмов)
-        // Передаем data в темплейт для создания разметки.
-        const filmInfo = filmInfoTemplate(data);
-        openModal(filmInfo);
-    }
-
+    const data = movieHttpService.getFilmId(filmId)
+    data.then(result => {
+      const filmInfo = filmInfoTemplate(result.data)
+      openModal(filmInfo)
+    })
+    // data --> вызвать обьект movieHttpService и получить результат ответа (объект фильмов)
+    // Передаем data в темплейт для создания разметки.
+  }
 }
 
-export default showFilmInfo;
+export default showFilmInfo
