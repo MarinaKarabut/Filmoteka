@@ -5,7 +5,9 @@ import renderFilms from './js/renderFilms'
 import showFilmInfo from './js/showFilmInfo'
 import {closeModal, onClickOverlay, escapeClose} from './js/closeModal'
 import addHeaderMenuEventListener from './js/header'
-import filmsSearchOptions from './js/filmOptions.js'
+
+import filmsSearchOptions from "./js/filmOptions.js";
+import { headerMenuLinks } from "./js/header/headerMenuLinks.js";
 
 import headerTemplate from './templates/header-main.hbs'
 import movieGalleryTemplate from './templates/movie-gallery.hbs'
@@ -47,6 +49,10 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   const closeModalBtn = refs.modalWindow.querySelector('.modal-btn__icon')
   closeModalBtn.addEventListener('click', closeModal)
+
+  const { selector, actionType, listener } = headerMenuLinks[0];
+  const headerHomeElement = document.querySelector(selector);
+  headerHomeElement.addEventListener(actionType, listener);
 
   const overlay = document.querySelector('.backdrop')
   overlay.addEventListener('click', onClickOverlay)
