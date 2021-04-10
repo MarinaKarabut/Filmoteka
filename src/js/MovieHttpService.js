@@ -28,18 +28,18 @@ class MovieHttpService {
        const { results } = films;
        const genres = MovieHttpService.genres;
 
-       const movies = results.map(({ poster_path, original_title, genre_ids, release_date, vote_average, id, name, original_name,...rest}) => {
+       const movies = results.map(({ poster_path, original_title, genre_ids, release_date, vote_average, id, name, original_name, ...rest }) => {
          const genreList = genre_ids.map(id => {
            return genres[id]
          })
            .filter(elem => elem)
-        //  console.log(rest)
+         //  console.log(rest)
          return {
            poster_path,
-           original_title:original_title?original_title:original_name?original_name:name?name:title?title:''
+           original_title: original_title ? original_title : original_name ? original_name : name ? name : title ? title : ''
            , genreList, release_date, vote_average, id,
-         }
-         })
+         };
+       });
       //  const fullResults = results.map(film => {
       //    if (film.original_name) {
       //      film.original_title = film.original_name
@@ -99,7 +99,6 @@ class MovieHttpService {
 //     return stringForUrl;
 //   }
 }
-const movieHttpService = new MovieHttpService();
-movieHttpService.getFilmId();
+
 export default MovieHttpService;
 
