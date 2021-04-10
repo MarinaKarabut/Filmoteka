@@ -30,6 +30,7 @@ refs.modalWindow.innerHTML = modalWindowTemplate();
 const movieHttpService = new MovieHttpService();
 
 window.addEventListener('DOMContentLoaded', async () => {
+
   addHeaderMenuEventListener();
   const galleryList = main.querySelector('.js-gallery-movies');
 

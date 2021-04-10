@@ -6,23 +6,13 @@ class MovieHttpService {
   static BASE_URL = 'https://api.themoviedb.org/3'
   static API_KEY = '923c2cf88ec4338da74c768a045101f0'
 
-  static setGenres(genres) {
-    MovieHttpService.genres = genres;
-  }
-
   async get({endpoint, options: {page, query}}) {
 
     try {
-      const {data: films} = await axios.get(endpoint, {
-        params: {
-          page,
-          query,
-          api_key: MovieHttpService.API_KEY,
-          language: "en-US",
-        }
-      });
+      const requestParams = this.createParams({ page, query });
+      const {data: films} = await axios.get(endpoint, requestParams);
       const { results } = films;
-      const genres = MovieHttpService.genres;
+      const genres = await this.getAllGenres();
       const movies = results.map(({ poster_path, original_title, genre_ids, release_date, vote_average, id, name, original_name, first_air_date, ...rest }) => {
         const newPosterPath = poster_path ? `https://image.tmdb.org/t/p/w300/${poster_path}` : defaultImg
         const realeseData = release_date || first_air_date;
@@ -37,35 +27,50 @@ class MovieHttpService {
           , genreList, realeseData: newRelease_date, vote_average, id,
         };
       });
-       return movies;
+      films.results = movies;
+       return films;
      } catch (error) {
        return error;
      }
-    }
-    async getAllGenres() {
-      const { data: {genres} } = await axios.get("genre/movie/list", {
-        params: {
-           api_key: MovieHttpService.API_KEY,
-           language: "en-US",
-         }
-      });
+  }
+  
+  async getAllGenres() {
+    try {
+      const requestParams = this.createParams();
+      const { data: { genres } } = await axios.get("genre/movie/list", requestParams);
       const genresMap = genres.reduce((acc, { id, name }) => {
         acc[id] = name;
         return acc;
       }, {});
       return genresMap;
     }
-
-    getFilmId(id) {
-      const filmIdRequest = axios.get(`/movie/${id}`, {
-        params: {
-          api_key: MovieHttpService.API_KEY,
-        },
-      });
-      return filmIdRequest.then(result => {
-        return result;
-      });
-     }
+    catch (error) {
+      console.log(error);
+      return error;
+    }
   }
+
+  async getFilmById(id) {
+    try {
+      const requestParams = this.createParams();
+      const result = await axios.get(`/movie/${id}`, requestParams);
+      return result;
+    }
+    catch (error) {
+      console.log(error);
+      return error;
+    }
+  }
+
+  createParams(params) {
+    return {
+      params: {
+        ...params,
+        api_key: MovieHttpService.API_KEY,
+        language: "en-US",  
+      }
+    }
+  }
+}
   export default MovieHttpService;
 
