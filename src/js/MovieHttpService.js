@@ -52,7 +52,8 @@ class MovieHttpService {
       //  const requireItems = results.map(({ poster_path, original_title, genre_ids, release_date, vote_average, id }) =>
       //    ({ poster_path, original_title, genre_ids, release_date, vote_average, id }))
       //  return requireItems;
-       return movies;
+       films.results = movies;
+       return films;
      } catch (error) {
        return error;
      }

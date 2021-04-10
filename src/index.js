@@ -5,7 +5,8 @@ import renderFilms from './js/renderFilms';
 import showFilmInfo from './js/showFilmInfo';
 import closeModal from './js/closeModal';
 import searchFormHandler from './js/searchFormHandler.js';
-// import './js/addBaseTmp.js';
+import filmsSearchOptions from "./js/filmOptions.js";
+    // import './js/addBaseTmp.js';
 // import './js/toggleBtnInputHeader.js';
 // import './js/renderMarkupMovie.js';
 // import './js/modal-card.js';
@@ -35,13 +36,6 @@ refs.footer.innerHTML = footerTemplate({src: footerSrc});
 
 const movieHttpService = new MovieHttpService();
 
-const filmsSearchOptions = {
-    endpoint: 'trending/all/day',
-    options: {
-      page: 1,
-      query: ""
-    }
-};
 
 window.addEventListener('DOMContentLoaded', async () => {
     const galleryList = document.querySelector('.js-gallery-movies');

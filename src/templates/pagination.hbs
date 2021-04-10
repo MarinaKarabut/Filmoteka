@@ -1,7 +1,7 @@
-<div class="pagination-container">
-    <button id="arrow-left" class="arrow-btn">&lt;</button>
-    <div id="pagination-btns" class="pagination-btns">
-
-    </div>
-    <button id="arrow-right" class="arrow-btn">&gt;</button>
+<button id="arrow-left" class="arrow-btn">&lt;</button>
+<div id="pagination-btns" class="pagination-btns">
+    {{#each list}}
+    <button class="pagination-button">{{this}}</button>
+    {{/each}}
 </div>
+<button id="arrow-right" class="arrow-btn">&gt;</button>
