@@ -1,5 +1,5 @@
 function addToWatched() {
-
+  localStorage.setItem('film ID', filmId)
 }
 
-export default addToWatched;
+export default addToWatched
