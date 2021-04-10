@@ -5,18 +5,12 @@ import renderFilms from './js/renderFilms';
 import showFilmInfo from './js/showFilmInfo';
 import closeModal from './js/closeModal';
 import searchFormHandler from './js/searchFormHandler.js';
-// import './js/addBaseTmp.js';
-// import './js/toggleBtnInputHeader.js';
-// import './js/renderMarkupMovie.js';
-// import './js/modal-card.js';
-// import './js/addToLocalStorage.js';
-// import './js/searchMovies.js';
-// import './js/pagination.js';
+
 
 import headerTemplate from './templates/header-main.hbs';
 import movieGalleryTemplate from './templates/movie-gallery.hbs';
 import footerTemplate from './templates/footer.hbs';
-// import modalWindowTemplate from './templates/modal-window.hbs';
+import modalWindowTemplate from './templates/modal-window.hbs';
 
 import footerSrc from './images/sprite.svg';
 
@@ -31,7 +25,7 @@ const refs = {
 refs.header.innerHTML = headerTemplate();
 refs.main.innerHTML = movieGalleryTemplate();
 refs.footer.innerHTML = footerTemplate({src: footerSrc});
-// refs.modalWindow.innerHTML = modalWindowTemplate();
+refs.modalWindow.innerHTML = modalWindowTemplate();
 
 const movieHttpService = new MovieHttpService();
 

@@ -1,5 +1,3 @@
-import refs from './refs.js';
-
 refs.myLibraryPage.addEventListener('click', onToggleBtnHeader);
 function onToggleBtnHeader(e) {
 
@@ -23,7 +21,6 @@ refs.homePage.addEventListener('click', onToggleInput);
 
 function onToggleInput(e) {
 
-   
 
      refs.btnWatchedHeader.classList.add('is-hidden');
     refs.btnQueueHeader.classList.add('is-hidden');
@@ -38,7 +35,6 @@ function onToggleInput(e) {
     refs.homePage.classList.add('active')
 }
 
-console.log(window.history);
 
 // const pathes = {
     //     pathH: window.location.origin,
