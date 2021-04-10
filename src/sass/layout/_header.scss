@@ -9,7 +9,7 @@
 .section-header {
   padding-top: 46px;
   padding-bottom: 97px;
-
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,6 +22,7 @@
   &.header-my-library-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url('../images/mobile/mobile-header-library.jpg');
+    padding-bottom: 65px;
   }
 }
 
@@ -83,6 +84,8 @@
       &.header-my-library-bg {
         background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
           url('../images/tablet/tablet-header-library.jpg');
+
+        padding-bottom: 65px;
       }
     }
   }
@@ -109,6 +112,7 @@
     &.header-my-library-bg {
       background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url('../images/tablet/tablet-header-library.jpg');
+      padding-bottom: 65px;
     }
   }
 }
@@ -122,6 +126,7 @@
     &.header-my-library-bg {
       background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
         url('../images/desktop/desktop-header-library.jpg');
+      padding-bottom: 65px;
     }
   }
 }
