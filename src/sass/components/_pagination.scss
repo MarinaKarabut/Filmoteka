@@ -5,7 +5,7 @@
     // justify-content: center;
     @include flex(center);
     // margin: 0 auto;
-    margin-bottom: 60px;
+    margin-top: 50px;
   }
 
   &-btns {
@@ -35,15 +35,17 @@
     }
     &:hover,
     &:focus {
-      width: 40px;
+      min-width: 40px;
       height: 40px;
       background-color: $accent-color;
       color: $secondary-color;
+      transition-duration: 500ms;
     }
     &:active {
       box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.521);
     }
   }
+
   &-button.current-page {
     width: 40px;
     height: 40px;
@@ -117,4 +119,11 @@
 }
 .hidden {
   display: none;
+}
+.dots {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  height: fit-content;
 }

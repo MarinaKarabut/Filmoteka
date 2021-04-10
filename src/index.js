@@ -5,6 +5,7 @@ import renderFilms from './js/renderFilms';
 import showFilmInfo from './js/showFilmInfo';
 import closeModal from './js/closeModal';
 import searchFormHandler from './js/searchFormHandler.js';
+import filmsSearchOptions from "./js/filmOptions.js";
 
 import headerTemplate from './templates/header-main.hbs';
 import movieGalleryTemplate from './templates/movie-gallery.hbs';
@@ -32,14 +33,6 @@ refs.footer.innerHTML = footerTemplate({src: footerSrc});
 refs.modalWindow.innerHTML = modalWindowTemplate();
 
 const movieHttpService = new MovieHttpService();
-
-const filmsSearchOptions = {
-  endpoint: 'trending/all/day',
-  options: {
-    page: 1,
-    query: '',
-  },
-};
 
 window.addEventListener('DOMContentLoaded', async () => {
   const galleryList = document.querySelector('.js-gallery-movies');
