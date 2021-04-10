@@ -4,7 +4,6 @@ import MovieHttpService from './js/MovieHttpService'
 import renderFilms from './js/renderFilms'
 import showFilmInfo from './js/showFilmInfo'
 import closeModal from './js/closeModal'
-import searchFormHandler from './js/searchFormHandler.js'
 
 import headerTemplate from './templates/header-main.hbs'
 import movieGalleryTemplate from './templates/movie-gallery.hbs'
@@ -51,7 +50,4 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
   const closeModalBtn = refs.modalWindow.querySelector('.modal-btn__icon')
   closeModalBtn.addEventListener('click', closeModal)
-
-  const formSearchFilm = document.getElementById('search-film')
-  formSearchFilm.addEventListener('submit', searchFormHandler)
 })
