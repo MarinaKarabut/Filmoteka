@@ -16,28 +16,9 @@ export default addToQueue;
     // 5. превратить queueFilmList из массива в строку
     // 6. сохранить строку queueFilmList в localstorage
 
-
-    function addToQueue(e) {
-
-
-
-}
-
-
     // const addedFilmsId = [];
     // const movieCard = document.querySelector('.film-info__img');
     // const { filmId } = movieCard.dataset;
     // addedFilmsId.push(filmId);
     // const filmIdStr = JSON.stringify(addedFilmsId);
     // localStorage.setItem('id', filmIdStr);
-
-
-export default addToQueue;
-
-//   const addedFilmsId = []
-//   const imgCard = document.querySelector('.film-info__img')
-//   const {filmId} = imgCard.dataset
-//   addedFilmsId.push(filmId)
-//   const filmIdStr = JSON.stringify(addedFilmsId)
-//   localStorage.setItem('id', filmIdStr)
-
