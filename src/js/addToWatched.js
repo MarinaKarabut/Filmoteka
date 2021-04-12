@@ -1,4 +1,3 @@
-
 function addToWatched() {
 
     // const addFilmsWathed = [];
