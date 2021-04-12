@@ -1,3 +1,3 @@
 export function onFilmSearch(e) {
-    e.preventDefault()
+    e.preventDefault();
 }

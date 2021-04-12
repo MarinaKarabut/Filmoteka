@@ -1,20 +1,21 @@
 import './sass/main.scss'
 
-import MovieHttpService from './js/MovieHttpService'
-import renderFilms from './js/renderFilms'
-import showFilmInfo from './js/showFilmInfo'
-import {closeModal, onClickOverlay, escapeClose} from './js/closeModal'
-import addHeaderMenuEventListener from './js/header'
+import MovieHttpService from './js/MovieHttpService';
+import renderFilms from './js/renderFilms';
+import showFilmInfo from './js/showFilmInfo';
+import { closeModal, onClickOverlay, escapeClose } from './js/closeModal';
+import addHeaderMenuEventListener from './js/header';
+import renderModalStudents from './js/createStudentsInfo.js';
 
 import filmsSearchOptions from "./js/filmOptions.js";
 import { headerMenuLinks } from "./js/header/headerMenuLinks.js";
 
-import headerTemplate from './templates/header-main.hbs'
-import movieGalleryTemplate from './templates/movie-gallery.hbs'
-import footerTemplate from './templates/footer.hbs'
-import modalWindowTemplate from './templates/modal-window.hbs'
+import headerTemplate from './templates/header-main.hbs';
+import movieGalleryTemplate from './templates/movie-gallery.hbs';
+import footerTemplate from './templates/footer.hbs';
+import modalWindowTemplate from './templates/modal-window.hbs';
 
-import footerSrc from './images/sprite.svg'
+import footerSrc from './images/sprite.svg';
 
 const refs = {
   header: document.getElementById('header-main'),
@@ -54,4 +55,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   overlay.addEventListener('click', onClickOverlay)
 
   window.addEventListener('keydown', escapeClose)
+
+  const modalStudentsLink = document.getElementById('students-modal');
+  modalStudentsLink.addEventListener('click', renderModalStudents);
 })

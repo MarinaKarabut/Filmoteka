@@ -6,7 +6,7 @@ function openModal(modalContent) {
   const backdrop = document.querySelector('.backdrop')
   const modal = document.querySelector('.js-modal')
 
-  modalContentRef.innerHTML = modalContent
+  modalContentRef.innerHTML = modalContent;
 
   backdrop.classList.add('is-open')
   modal.classList.add('is-open')
@@ -18,4 +18,4 @@ function openModal(modalContent) {
   btnQueue.addEventListener('click', addToQueue)
 }
 
-export default openModal
+export default openModal;
