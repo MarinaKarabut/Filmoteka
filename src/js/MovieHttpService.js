@@ -14,7 +14,7 @@ class MovieHttpService {
       const { results } = films;
       const genres = await this.getAllGenres();
       const movies = results.map(({ poster_path, original_title, genre_ids, release_date, vote_average, id, name, original_name, first_air_date, ...rest }) => {
-        const newPosterPath = poster_path ? `https://image.tmdb.org/t/p/w300/${poster_path}` : defaultImg
+        const newPosterPath = poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : defaultImg
         const realeseData = release_date || first_air_date;
         const [newRelease_date] = realeseData.split("-");
         const genreList = genre_ids.map(id => {
