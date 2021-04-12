@@ -11,6 +11,7 @@
 .js-gallery-movies {
   @include grid(274px, auto-fill);
   grid-gap: 30px;
+  position: relative;
 }
 .movie-card {
   &-img {
@@ -20,7 +21,9 @@
     transition: transform 250ms linear;
     cursor: pointer;
     &:hover {
-      transform: scale(1.03);
+      cursor: pointer;
+      box-shadow: 0px -2px 32px 1px rgba(0, 0, 0, 0.69);
+      transform: scale(1.04);
     }
   }
   &-title {

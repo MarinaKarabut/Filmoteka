@@ -10,10 +10,12 @@ import renderModalStudents from './js/createStudentsInfo.js';
 import filmsSearchOptions from "./js/filmOptions.js";
 import { headerMenuLinks } from "./js/header/headerMenuLinks.js";
 
-import headerTemplate from './templates/header-main.hbs';
-import movieGalleryTemplate from './templates/movie-gallery.hbs';
-import footerTemplate from './templates/footer.hbs';
-import modalWindowTemplate from './templates/modal-window.hbs';
+import headerTemplate from './templates/header-main.hbs'
+import movieGalleryTemplate from './templates/movie-gallery.hbs'
+import footerTemplate from './templates/footer.hbs'
+import modalWindowTemplate from './templates/modal-window.hbs'
+import createElement from './js/createElement.js';
+import { loader} from './js/loader.js'
 
 import footerSrc from './images/sprite.svg';
 
@@ -33,12 +35,15 @@ const movieHttpService = new MovieHttpService()
 
 window.addEventListener('DOMContentLoaded', async () => {
   addHeaderMenuEventListener()
-  const galleryList = main.querySelector('.js-gallery-movies')
+  const galleryList = refs.main.querySelector('.js-gallery-movies')
 
   try {
-    const films = await movieHttpService.get(filmsSearchOptions)
-    renderFilms(films, galleryList)
-
+    const newLoader = createElement(loader)
+    galleryList.insertAdjacentElement('afterbegin', newLoader)
+    const films = await movieHttpService.get(filmsSearchOptions);
+    newLoader.remove()
+    renderFilms(films, galleryList);
+    
     galleryList.addEventListener('click', showFilmInfo)
   } catch (error) {
     galleryList.innerHTML = `<p>It's so pitty. No movies were found :( </p>`
