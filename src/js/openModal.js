@@ -1,5 +1,4 @@
-import addToWatched from './addToWatched.js'
-import addToQueue from './addToQueue.js'
+
 
 function openModal(modalContent) {
   const modalContentRef = document.querySelector('.modal-content')

@@ -13,3 +13,4 @@ export function createHeaderContent(path) {
         header.className = `section-header ${headerClass}`;
     }
 }
+
