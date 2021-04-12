@@ -1,3 +1,4 @@
+
 import { headerMenuLinks } from "./headerMenuLinks.js";
 
 export function createHeaderContent(path) {
@@ -12,4 +13,6 @@ export function createHeaderContent(path) {
         const header = document.querySelector(".section-header");
         header.className = `section-header ${headerClass}`;
     }
+
 }
+
