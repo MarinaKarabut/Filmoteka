@@ -24,4 +24,4 @@ function showFilmInfo(e) {
 
 }
 
-export default showFilmInfo
+export default showFilmInfo;

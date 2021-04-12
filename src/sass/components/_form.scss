@@ -15,15 +15,25 @@
   font-size: 14px;
   line-height: 1.14;
   outline: none;
+  transition: border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &::placeholder {
     color: $secondary-color;
     transition: color 250ms linear;
     opacity: 1;
+    transition: color 100ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   &:focus::placeholder {
     opacity: 0;
+  }
+
+  &:hover &::placeholder {
+    color: $accent-color;
+  }
+
+  &:hover {
+    border-bottom: 1px solid $accent-color;
   }
 }
 

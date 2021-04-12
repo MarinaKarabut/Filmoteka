@@ -85,26 +85,26 @@ function pagBtnRender(totalPages,page) {
         if (+pagBtn.textContent === page) {
             pagBtn.classList.add('current-page');
         }
-    })
+    });
 
 }
-pagBtnRender(totalPages, page)
+pagBtnRender(totalPages, page);
 
 const currentPage = paginationBtns.querySelector('.current-page');
 
 pagination.addEventListener('click', function (e) {
-    if (e.target.nodeName !== "BUTTON") { return }
-    const activeBtn = e.target
+    if (e.target.nodeName !== "BUTTON") { return; }
+    const activeBtn = e.target;
     if (e.target.classList.contains('pagination-button')) {
-        page = +activeBtn.textContent
-        console.log(page)
-        currentPage.textContent = page
+        page = +activeBtn.textContent;
+        console.log(page);
+        currentPage.textContent = page;
     } else if (e.target.id === 'arrow-left') {
         page = +currentPage.textContent - 1;
-        currentPage.textContent = page
+        currentPage.textContent = page;
         console.log('work1');
     } else if (e.target.id === 'arrow-right') {
-        page = +currentPage.textContent
+        page = +currentPage.textContent;
         currentPage.textContent = page + 1;
         console.log('work2');
     }
