@@ -1,10 +1,11 @@
 import './sass/main.scss'
 
-import MovieHttpService from './js/MovieHttpService'
-import renderFilms from './js/renderFilms'
-import showFilmInfo from './js/showFilmInfo'
-import {closeModal, onClickOverlay, escapeClose} from './js/closeModal'
-import addHeaderMenuEventListener from './js/header'
+import MovieHttpService from './js/MovieHttpService';
+import renderFilms from './js/renderFilms';
+import showFilmInfo from './js/showFilmInfo';
+import { closeModal, onClickOverlay, escapeClose } from './js/closeModal';
+import addHeaderMenuEventListener from './js/header';
+import renderModalStudents from './js/createStudentsInfo.js';
 
 import filmsSearchOptions from "./js/filmOptions.js";
 import { headerMenuLinks } from "./js/header/headerMenuLinks.js";
@@ -16,7 +17,7 @@ import modalWindowTemplate from './templates/modal-window.hbs'
 import createElement from './js/createElement.js';
 import { loader} from './js/loader.js'
 
-import footerSrc from './images/sprite.svg'
+import footerSrc from './images/sprite.svg';
 
 const refs = {
   header: document.getElementById('header-main'),
@@ -43,10 +44,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     newLoader.remove()
     renderFilms(films, galleryList);
     
-
-    //loader удаляю
-
-
     galleryList.addEventListener('click', showFilmInfo)
   } catch (error) {
     galleryList.innerHTML = `<p>It's so pitty. No movies were found :( </p>`
@@ -63,4 +60,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   overlay.addEventListener('click', onClickOverlay)
 
   window.addEventListener('keydown', escapeClose)
+
+  const modalStudentsLink = document.getElementById('students-modal');
+  modalStudentsLink.addEventListener('click', renderModalStudents);
 })

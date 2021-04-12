@@ -33,7 +33,7 @@ class MovieHttpService {
        return error;
      }
   }
-  
+
   async getAllGenres() {
     try {
       const requestParams = this.createParams();
@@ -67,9 +67,9 @@ class MovieHttpService {
       params: {
         ...params,
         api_key: MovieHttpService.API_KEY,
-        language: "en-US",  
+        language: "en-US",
       }
-    }
+    };
   }
 }
   export default MovieHttpService;
