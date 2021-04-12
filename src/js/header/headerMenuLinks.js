@@ -5,7 +5,7 @@ import { onFilmAction } from "./onFilmAction.js";
 
 export const headerMenuLinks = [
     {
-        pathname: "/",
+        pathname: "/home",
         template: formHeaderTemplate,
         selector: "#search-film",
         actionType: "submit",
@@ -21,3 +21,4 @@ export const headerMenuLinks = [
         headerClass: "header-my-library-bg",
     }
 ];
+
