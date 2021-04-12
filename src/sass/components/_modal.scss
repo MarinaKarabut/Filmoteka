@@ -46,7 +46,10 @@
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 40px;
-
+    width: 100%;
+    height: 95vh;
+    overflow-y: auto;
+    overflow-x: hidden;
     @include tablet {
       @include flex;
     }
