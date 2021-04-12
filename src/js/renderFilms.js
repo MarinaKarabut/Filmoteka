@@ -15,15 +15,15 @@ function renderFilms(films, filmsContainer) {
 
   const arrowLeft = document.getElementById('arrow-left');
   const arrowRight = document.getElementById('arrow-right');
-     if (filmsSearchOptions.options.page === 1) {
-       arrowLeft.setAttribute('disabled', 'disabled');
+     if (filmsSearchOptions.options.page < 2) {
+       arrowLeft.classList.add('hidden-arrow');
     }else{
-       arrowLeft.removeAttribute('disabled');
+       arrowLeft.classList.remove('hidden-arrow');
   }
-  if (filmsSearchOptions.options.page === films.total_pages) {
-    arrowRight.setAttribute('disabled', 'disabled');
+  if (filmsSearchOptions.options.page === films.total_pages || films.total_pages  < 1) {
+    arrowRight.classList.add('hidden-arrow');
   } else {
-    arrowRight.removeAttribute('disabled');
+    arrowRight.classList.remove('hidden-arrow');
   }
 
 }
