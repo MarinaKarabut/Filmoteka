@@ -5,6 +5,7 @@
   }
 
   &__list-item {
+    display: flex;
     &__vote {
       color: $vote-color;
       display: inline-block;
@@ -29,6 +30,10 @@
       background-color: $secondary-bg-color;
       border-radius: 5px;
     }
+
+    // &__characteristic {
+    //   display: flex;
+    // }
   }
 
   &-about__title {
