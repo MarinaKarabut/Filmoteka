@@ -17,17 +17,7 @@ function addToQueue(movie) {
     localStorage.setItem('queue', JSON.stringify(queue));
  }
 
-function changeBtnAdd() {
-    refs.btnAddToWatched.textContent = 'Remove to watched'
-    refs.btnAddToWatched.dataset.type = 'remove'
-    refs.btnAddToWatched.style.backgroundColor = 'orange'
-}
 
-function changeBtnRemove() {
-    refs.btnAddToWatched.textContent = 'Add to watched'
-    refs.btnAddToWatched.dataset.type = 'add'
-    refs.btnAddToWatched.style.backgroundColor = ''
- }
 
 function onClickBtn() {
     if (dataset.type = 'add') {

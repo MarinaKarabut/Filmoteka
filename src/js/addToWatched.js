@@ -1,11 +1,21 @@
 
-function addToWatched() {
+ export function addToWatched(movie) {
 
-    // const addFilmsWathed = [];
-    // const movieCard = document.querySelector('.gallery-movie-item');
-
-  localStorage.setItem('film ID', filmId)
-
+  const data = localStorage.getItem('watched')
+    const watched = data === null ? [] : JSON.parse(data)// считываем значение, парсим
+    watched.push(movie)//обработать полученные данные
+   localStorage.setItem('watched', JSON.stringify(watched));
+   
 }
 
-export default addToWatched
+export  function removeToWatched(movieId) {
+  const data = JSON.parse(localStorage.getItem('watched'));
+  const watched = data.filter(movie => movie.id !== movieId)
+  localStorage.setItem('watched', JSON.stringify(watched));
+  
+}
+
+
+
+
+
