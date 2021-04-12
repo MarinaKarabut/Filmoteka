@@ -2,7 +2,8 @@ import { headerMenuLinks } from "./headerMenuLinks.js";
 
 export function createHeaderContent(path) {
     const headerPageContent = document.querySelector('#header-page-content');
-    const {template, selector, actionType, listener, headerClass} =  headerMenuLinks.find(obj =>  obj.pathname === path);
+    const { template, selector, actionType, listener, headerClass } = headerMenuLinks.find(obj => obj.pathname === path);
+    console.log(template());
     headerPageContent.innerHTML = template();  
     if (selector) {
         const element = document.querySelector(selector)
