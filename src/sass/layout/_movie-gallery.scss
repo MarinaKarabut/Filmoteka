@@ -10,6 +10,7 @@
 }
 .js-gallery-movies {
   @include grid(274px, auto-fill);
+  // @include grid(1tr, auto-fill);
   grid-gap: 30px;
   position: relative;
 }
@@ -20,6 +21,7 @@
     height: 398px;
     transition: transform 250ms linear;
     cursor: pointer;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover {
       cursor: pointer;
       box-shadow: 0px -2px 32px 1px rgba(0, 0, 0, 0.69);
@@ -55,7 +57,7 @@
     height: 16px;
     width: 36px;
     border-radius: 5px;
-    margin-left: 10px;
+    margin-left: auto;
     @include flex(center, center);
     text-transform: uppercase;
   }
