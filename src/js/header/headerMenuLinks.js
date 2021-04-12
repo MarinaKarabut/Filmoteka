@@ -1,7 +1,7 @@
-import formHeaderTemplate from '../../templates/formHeader.hbs'
-import buttonsHeaderTemplate from '../../templates/buttonsHeader.hbs'
+import formHeaderTemplate from '../../templates/formHeader.hbs';
+import buttonsHeaderTemplate from '../../templates/buttonsHeader.hbs';
 import { searchFormHandler } from "./searchFormHandler";
-import {onFilmAction} from "./onFilmAction"
+import { onFilmAction } from "./onFilmAction.js";
 
 export const headerMenuLinks = [
     {

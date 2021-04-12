@@ -1,3 +1,3 @@
 export function onFilmAction(e) {
-     e.preventDefault()
+     e.preventDefault();
 }

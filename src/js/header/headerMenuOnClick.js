@@ -1,4 +1,4 @@
-import { createHeaderContent } from "./createHeaderContent";
+import { createHeaderContent } from "./createHeaderContent.js";
 
 export function headerMenuOnClick(e) {
     e.preventDefault();
