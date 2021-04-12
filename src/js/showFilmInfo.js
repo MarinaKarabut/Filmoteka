@@ -14,10 +14,9 @@ function showFilmInfo(e) {
 
     const data = movieHttpService.getFilmById(filmId)
     data.then(({ data }) => {
-      console.log(data);
       const filmInfo = filmInfoTemplate(data)
       openModal(filmInfo)
-      addToLibrary(data)
+      addToLibrary(data.id)
       // console.log(filmInfo);
     })
   }

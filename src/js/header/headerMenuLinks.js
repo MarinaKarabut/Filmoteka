@@ -16,7 +16,7 @@ export const headerMenuLinks = [
         pathname: "/my-library",
         template: buttonsHeaderTemplate,
         selector: "#profile-films-actions",
-        actionType: "submit",
+        actionType: "click",
         listener: onFilmAction,
         headerClass: "header-my-library-bg",
     }

@@ -1,30 +1,16 @@
-import { addToQueue, removeToQueue } from './addToQueue.js';
+import { toggleQueue} from './toggleQueue';
+import { queueBtnProps } from "./localBtnProps.js";
 
-function changeBtnAdd(nodeBtn) {
-    console.log(nodeBtn);
-    nodeBtn.textContent = 'Remove to queue'
-    nodeBtn.dataset.type = 'remove'
-    nodeBtn.style.backgroundColor = $secondary-accent-color
+function toggleBtn(type, nodeBtn) {
+    type = (type === 'remove') ? "add" : "remove";
+    nodeBtn.dataset.type = type;
+    nodeBtn.textContent = queueBtnProps[type].text;
+    nodeBtn.style.backgroundColor = queueBtnProps[type].bg;
 }
 
-function changeBtnRemove(nodeBtn) {
-    nodeBtn.textContent = 'Add to queue'
-    nodeBtn.dataset.type = 'add'
-    nodeBtn.style.backgroundColor = ''
-}
- 
-export default function toggleModalBtnQueue(e, movie) {
+export default function toggleModalBtns(e, id) {
+    e.preventDefault();
     const { type } = e.target.dataset;
-    const { id } = movie;
-
-    switch (type) {
-        case 'remove':
-            removeToQueue(id);
-            changeBtnRemove(e.target);
-            break;
-        case 'add':
-            addToQueue(movie);
-            changeBtnAdd(e.target);
-            break;
-   }
+    toggleQueue(id);
+    toggleBtn(type, e.target);
 }

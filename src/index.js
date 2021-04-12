@@ -6,6 +6,7 @@ import showFilmInfo from './js/showFilmInfo';
 import { closeModal, onClickOverlay, escapeClose } from './js/closeModal';
 import addHeaderMenuEventListener from './js/header';
 import renderModalStudents from './js/createStudentsInfo.js';
+import { watched, queue } from "./js/locaFilms.js";
 
 import filmsSearchOptions from "./js/filmOptions.js";
 import { headerMenuLinks } from "./js/header/headerMenuLinks.js";
