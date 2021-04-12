@@ -20,6 +20,9 @@
   @if $columns-type == auto-fill {
     grid-template-columns: repeat(auto-fill, minmax($columns-value, 1fr));
   }
+  @if $columns-type == auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax($columns-value, 1fr));
+  }
 }
 
 @mixin mobile {
