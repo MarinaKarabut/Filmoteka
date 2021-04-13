@@ -33,7 +33,8 @@
     max-width: 280px;
 
     @include tablet {
-      max-width: 618px;
+      min-width: 618px;
+      height: 100%;
     }
     @include desktop {
       max-width: 882px;

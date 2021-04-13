@@ -49,11 +49,11 @@ class MovieHttpService {
       throw error;
     }
   }
-
   async getFilmById(id) {
     try {
       const requestParams = this.createParams();
       const result = await axios.get(`/movie/${id}`, requestParams);
+      console.log(result)
       return result;
     }
     catch (error) {
@@ -61,6 +61,7 @@ class MovieHttpService {
       throw error;
     }
   }
+
 
   async getFilmsFromId(arrId) {
       try {
