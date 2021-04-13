@@ -10,7 +10,6 @@ export function headerMenuOnClick(e) {
     const prevActiveElement = menuList.querySelector(".active");
     prevActiveElement.classList.remove('active');
     e.target.classList.add("active");
-
     createHeaderContent(e.target.pathname);
     history.pushState(null, null, e.target.pathname);
 }
