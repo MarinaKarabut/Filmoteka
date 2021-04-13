@@ -7,9 +7,9 @@ import addToLibrary  from '../js/addToLibrary.js';
 const movieHttpService = new MovieHttpService()
 let info = '';
 function showFilmInfo(e) {
-  e.preventDefault()
+  e.preventDefault();
 
-  const {target} = e
+  const { target } = e;
 
   if (target.classList.contains('js-open-modal')) {
 
@@ -18,14 +18,14 @@ function showFilmInfo(e) {
     data.then(({ data }) => {
       const filmName = data.original_title;
       const linkYoutube = createTrailerLink(filmName);
-      // linkYoutube
-      //   .then(result => {
-      //     data.youtubeId = result
-      //     info = data
-      //   })
-      const filmInfo = filmInfoTemplate(data)
-      openModal(filmInfo)
-      addToLibrary(data.id)
+      linkYoutube
+        .then(result => {
+          data.youtubeId = result
+          info = data
+        })
+      const filmInfo = filmInfoTemplate(data);
+      openModal(filmInfo);
+      addToLibrary(data.id);
     })
       .catch(error =>
         openModal(`<p class="unavialable-page">Accept our appologies. The film info is not avialable now .</p>`)
@@ -34,10 +34,10 @@ function showFilmInfo(e) {
 
 }
 export function showIframe(e) {
-  e.preventDefault()
-  const { youtubeId } = info
-  const renderIframe = iframeTemplate({ youtubeId })
-  openModal(renderIframe)
+  e.preventDefault();
+  const { youtubeId } = info;
+  const renderIframe = iframeTemplate({ youtubeId });
+  openModal(renderIframe);
 
 }
 
