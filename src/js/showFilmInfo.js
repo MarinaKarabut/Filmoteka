@@ -17,8 +17,6 @@ function showFilmInfo(e) {
       const filmInfo = filmInfoTemplate(data)
       openModal(filmInfo)
       addToLibrary(data.id)
-      // console.log(filmInfo);
-
     })
   }
 
