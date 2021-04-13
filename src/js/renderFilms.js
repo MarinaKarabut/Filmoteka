@@ -1,6 +1,7 @@
-import filmListTemplate from '../templates/filmList.hbs';
-import createPagination from './createPagination.js';
-import filmsSearchOptions from "./filmOptions.js";
+
+import filmListTemplate from '../templates/filmList.hbs'
+import createPagination from './createPagination.js'
+import filmsSearchOptions from "./filmOptions.js"
 
 function renderFilms(films, filmsContainer) {
   filmsContainer.innerHTML = filmListTemplate(films.results);
@@ -25,7 +26,6 @@ function renderFilms(films, filmsContainer) {
   } else {
     arrowRight.classList.remove('hidden-arrow');
   }
-
 }
 
 export default renderFilms;
