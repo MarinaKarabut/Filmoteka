@@ -16,6 +16,14 @@ class MovieHttpService {
       const movies = results.map(({ poster_path, original_title, genre_ids, release_date, vote_average, id, name, original_name, first_air_date, ...rest }) => {
         const newPosterPath = poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : defaultImg
         const realeseData = release_date || first_air_date;
+        if (realeseData === undefined) {
+          const filmCardList = document.querySelector('.js-gallery-movies');
+          filmCardList.insertAdjacentHTML('beforebegin', `<p class="unavialable-page">Accept our apologies.<br> The page you chose is not avialable now </p>`)
+          setTimeout(() => {
+            const error = document.querySelector('.unavialable-page');
+            error.remove();
+          }, 4000);
+        }
         const [newRelease_date] = realeseData.split("-");
         const genreList = genre_ids.map(id => {
           return genres[id]
