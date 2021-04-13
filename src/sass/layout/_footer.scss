@@ -1,4 +1,5 @@
 .film-footer {
+  position: absolute;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -12,6 +13,8 @@
   color: $additional-color;
   padding-top: 30px;
   padding-bottom: 28px;
+  width: 100vw;
+  bottom: 0;
 
   @media screen and (min-width: 480px) {
     font-size: 16px;
