@@ -35,7 +35,7 @@ function changeLocation() {
   });
 }
 
-function toggle() {
+export function toggle() {
 const btnContainer = document.getElementById('profile-films-actions')
   console.log(btnContainer);
   btnContainer.addEventListener('click', function (e) {
