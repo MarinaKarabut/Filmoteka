@@ -15,7 +15,8 @@ export async function onFilmAction(e) {
 
 
 }
- export async function renderFilmsFromLS(arrId) {
+
+export async function renderFilmsFromLS(arrId) {
     const results = await movieHttpService.getFilmsFromId(arrId); 
           const movieList = document.querySelector('.js-gallery-movies');
           const total_pages = Math.round(arrId.length / 20);

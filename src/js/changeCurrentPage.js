@@ -23,6 +23,7 @@ function changeLocation() {
 
     }
     if (window.location.pathname === "/my-library") {
+      console.log("/library");
       const btnWatched = document.getElementById('js-btn-watched')
       btnWatched.classList.add('is-active')
       const localWatched = localStorage.getItem("watched")
@@ -43,8 +44,10 @@ const btnContainer = document.getElementById('profile-films-actions')
     if (e.target.nodeName !== 'BUTTON') {
       return
     }
-    btnContainer.querySelector('.is-active').classList.toggle('is-active')
-    e.target.classList.toggle('is-active')
+    btnContainer.querySelectorAll('button')
+      .forEach(el => 
+        el.classList.toggle('is-active')
+        )
   })
  }
 
