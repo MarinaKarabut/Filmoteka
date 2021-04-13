@@ -2,7 +2,7 @@ const axios = require("axios");
 
 async function createTrailerLink(filmName) {
   const linkYotube = 'https://www.youtube.com';
-  const apiKeyYoutube = 'AIzaSyB6db_bd6qNpLAYe3C0yGFQYI82Q';
+  const apiKeyYoutube = 'AIzaSyC-gBgYIHjGzNVAuL1eVz1FWpMAxDYSMxc';
   const apiYoutube = 'https://youtube.googleapis.com/youtube/v3';
   const finalUrl = `${apiYoutube}/search?part=snippet&key=${apiKeyYoutube}&q=${filmName}&maxResults=1`
   const youtubeFetch = await axios.get(finalUrl);
