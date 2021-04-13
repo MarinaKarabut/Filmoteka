@@ -61,7 +61,6 @@ class MovieHttpService {
     try {
       const requestParams = this.createParams();
       const result = await axios.get(`/movie/${id}`, requestParams);
-      console.log(result)
       return result;
     }
     catch (error) {

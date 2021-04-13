@@ -12,11 +12,13 @@ function showFilmInfo(e) {
   const {target} = e
 
   if (target.classList.contains('js-open-modal')) {
-    const {filmId} = target.dataset
-    const data =  movieHttpService.getFilmById(filmId)
+
+    const { filmId } = target.dataset;
+    const data = movieHttpService.getFilmById(filmId);
+    data.catch(error => console.log(error))
     data.then(({ data }) => {
-      const filmName = data.original_title
-      const linkYoutube = createTrailerLink(filmName)
+      const filmName = data.original_title;
+      const linkYoutube = createTrailerLink(filmName);
       // linkYoutube
       //   .then(result => {
       //     data.youtubeId = result
