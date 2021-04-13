@@ -9,17 +9,3 @@ const createElement = ({ tag = "div", classList = "", content = "", attrs = [] }
 };
 
 export default createElement;
-
-// const errorMessageProps = {
-//     tag: "p",
-//     classList: "error-message",
-//     content: "Search result not successful. Enter the correct movie name",
-//     attrs: [
-//         {
-//             name: "href",
-//             value: "/"
-//         }
-//     ]
-// };
-
-// const errorMessage = createElement(errorMessageProps)

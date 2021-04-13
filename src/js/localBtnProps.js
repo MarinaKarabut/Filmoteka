@@ -1,21 +1,27 @@
 export const watchedBtnProps = {
     remove: {
-        text: 'Remove to watched',
-        bg: "#ff6b08"
+        text: 'Remove from watched',
+        bg: "#ff6b08",
+        type: 'remove',
     },
     add: {
         text: 'Add to watched',
-        bg: ""
+        bg: "",
+        type: 'add'
+        
     }
 };
 
 export const queueBtnProps = {
     remove: {
-        text: 'Remove to queue',
-        bg: "#ff6b08"
+        text: 'Remove from queue',
+        bg: "#ff6b08",
+        type: 'remove'
     },
     add: {
         text: 'Add to queue',
-        bg: ""
+        bg: "",
+        type: 'add'
     }
+
 };

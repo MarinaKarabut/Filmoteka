@@ -1,4 +1,4 @@
-import { toggleQueue} from './toggleQueue';
+import { toggleQueue} from './toggleQueue.js';
 import { queueBtnProps } from "./localBtnProps.js";
 
 function toggleBtn(type, nodeBtn) {
@@ -8,7 +8,7 @@ function toggleBtn(type, nodeBtn) {
     nodeBtn.style.backgroundColor = queueBtnProps[type].bg;
 }
 
-export default function toggleModalBtns(e, id) {
+export default function toggleModalBtnQueue(e, id) {
     e.preventDefault();
     const { type } = e.target.dataset;
     toggleQueue(id);

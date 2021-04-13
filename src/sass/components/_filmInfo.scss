@@ -26,10 +26,12 @@
       background-color: $secondary-bg-color;
       border-radius: 5px;
     }
-    // &__characteristic {
-    //   display: flex;
-    // }
+
+    &__box-card {
+      margin-left: 32px;
+    }
   }
+
   &-about__title {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -63,23 +65,42 @@
       background-color: $accent-color;
       color: $secondary-color;
     }
-    &:not(:last-child) {
-      margin-right: 10px;
+    @include mobile-end {
+      display: block;
+    }
+
+    @include tablet-end {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    @include tablet-end {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
     }
   }
+
   &__img {
     width: 100%;
     height: 356px;
-    margin-bottom: 30px;
+
     @include tablet {
       width: 264px;
       height: 374px;
       margin-right: 32px;
     }
     @include desktop {
-      width: 396px;
+      width: 350px;
       height: 478px;
       margin-right: 30px;
     }
   }
+}
+
+iframe {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }

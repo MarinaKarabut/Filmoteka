@@ -49,7 +49,7 @@ function createPagination(totalPages, filmsContainer) {
             }
          })
     
-
+    
     paginationContainer.addEventListener('click', async function (e) {
         e.preventDefault()
 
@@ -78,6 +78,9 @@ function createPagination(totalPages, filmsContainer) {
         renderFilms(films, filmsContainer)
     })
 
+  
+    
+   
     return paginationContainer;
 }
-export default createPagination;
+export default createPagination
