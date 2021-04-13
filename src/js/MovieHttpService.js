@@ -18,7 +18,7 @@ class MovieHttpService {
         const realeseData = release_date || first_air_date;
         if (realeseData === undefined) {
           const filmCardList = document.querySelector('.js-gallery-movies');
-          filmCardList.insertAdjacentHTML('beforebegin', `<p class="unavialable-page">Accept our apologies.<br> The page you chose is not avialable now </p>`)
+          filmCardList.insertAdjacentHTML('beforebegin', `<p class="unavialable-page">Accept our appologies.<br> The page you chose is not avialable now </p>`)
           setTimeout(() => {
             const error = document.querySelector('.unavialable-page');
             error.remove();

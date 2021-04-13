@@ -15,7 +15,7 @@ function showFilmInfo(e) {
 
     const { filmId } = target.dataset;
     const data = movieHttpService.getFilmById(filmId);
-    data.catch(error => console.log(error.status))
+    console.log(data);
     data.then(({ data }) => {
       const filmName = data.original_title;
       const linkYoutube = createTrailerLink(filmName);
@@ -24,10 +24,13 @@ function showFilmInfo(e) {
       //     data.youtubeId = result
       //     info = data
       //   })
-        const filmInfo = filmInfoTemplate(data)
-        openModal(filmInfo)
-       addToLibrary(data.id)
+      const filmInfo = filmInfoTemplate(data)
+      openModal(filmInfo)
+      addToLibrary(data.id)
     })
+      .catch(error =>
+        openModal(`<p class="unavialable-page">Accept our appologies. The film info is not avialable now .</p>`)
+      );
   }
 
 }
