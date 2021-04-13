@@ -83,10 +83,6 @@ class MovieHttpService {
         })
         return fullFilms;
       }
-    //   const requestParams = this.createParams();
-    //   const result = await axios.get(`/movie/${id}`, requestParams);
-    //   return result;
-    // }
     catch (error) {
       console.log(error);
       throw error;
