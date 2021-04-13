@@ -15,7 +15,7 @@ function showFilmInfo(e) {
 
     const { filmId } = target.dataset;
     const data = movieHttpService.getFilmById(filmId);
-    data.catch(error => console.log(error))
+    data.catch(error => console.log(error.status))
     data.then(({ data }) => {
       const filmName = data.original_title;
       const linkYoutube = createTrailerLink(filmName);
