@@ -4,6 +4,7 @@ import filmsSearchOptions from "./filmOptions.js";
 
 function renderFilms(films, filmsContainer) {
   filmsContainer.innerHTML = filmListTemplate(films.results);
+  console.log(films);
   const pagination = createPagination(films.total_pages, filmsContainer);
   const paginationContainer = document.querySelector('.pagination-container');
   if (paginationContainer) {
