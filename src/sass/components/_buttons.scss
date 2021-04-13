@@ -46,6 +46,7 @@
 }
 .is-active {
   background-color: $accent-color;
+  border-color: $accent-color;
 }
 @media screen and (min-width: 768) and (min-width: 1200px) {
   .button {
