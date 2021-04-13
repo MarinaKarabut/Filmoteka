@@ -16,6 +16,7 @@ function renderFilms(films, filmsContainer) {
 
   const arrowLeft = document.getElementById('arrow-left');
   const arrowRight = document.getElementById('arrow-right');
+  const pagButton = document.querySelector('.pagination-button')
      if (filmsSearchOptions.options.page < 2) {
        arrowLeft.classList.add('hidden-arrow');
     }else{
@@ -25,6 +26,11 @@ function renderFilms(films, filmsContainer) {
     arrowRight.classList.add('hidden-arrow');
   } else {
     arrowRight.classList.remove('hidden-arrow');
+  }
+  if (films.total_pages === 1) {
+    pagButton.classList.add('hidden-arrow')
+  } else {
+    pagButton.classList.remove('hidden-arrow')
   }
 }
 
