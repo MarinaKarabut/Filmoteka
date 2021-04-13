@@ -1,30 +1,31 @@
+
 import filmListTemplate from '../templates/filmList.hbs'
 import createPagination from './createPagination.js'
 import filmsSearchOptions from "./filmOptions.js"
 
 function renderFilms(films, filmsContainer) {
-  filmsContainer.innerHTML = filmListTemplate(films.results)
-
-  const pagination = createPagination(films.total_pages, filmsContainer)
+  filmsContainer.innerHTML = filmListTemplate(films.results);
+  const pagination = createPagination(films.total_pages, filmsContainer);
   const paginationContainer = document.querySelector('.pagination-container');
   if (paginationContainer) {
-    paginationContainer.remove()
+    paginationContainer.remove();
   }
 
-  filmsContainer.after(pagination)
-  
-  const arrowLeft = document.getElementById('arrow-left')
-  const arrowRight = document.getElementById('arrow-right')
-     if (filmsSearchOptions.options.page === 1) {
-        arrowLeft.setAttribute('disabled', 'disabled')
+
+  filmsContainer.after(pagination);
+
+  const arrowLeft = document.getElementById('arrow-left');
+  const arrowRight = document.getElementById('arrow-right');
+     if (filmsSearchOptions.options.page < 2) {
+       arrowLeft.classList.add('hidden-arrow');
     }else{
-      arrowLeft.removeAttribute('disabled')
+       arrowLeft.classList.remove('hidden-arrow');
   }
-  if (filmsSearchOptions.options.page === films.total_pages) {
-    arrowRight.setAttribute('disabled', 'disabled')
+  if (filmsSearchOptions.options.page === films.total_pages || films.total_pages  < 1) {
+    arrowRight.classList.add('hidden-arrow');
   } else {
-    arrowRight.removeAttribute('disabled')
+    arrowRight.classList.remove('hidden-arrow');
   }
 }
 
-export default renderFilms
+export default renderFilms;

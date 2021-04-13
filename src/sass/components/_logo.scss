@@ -18,10 +18,10 @@
   }
 }
 
-svg {
-  transition: color 250ms linear;
+.icon-film path {
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-svg:hover path {
+.icon-film:hover path {
   stroke: $accent-color;
 }
 

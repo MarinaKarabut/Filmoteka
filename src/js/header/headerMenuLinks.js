@@ -1,11 +1,11 @@
-import formHeaderTemplate from '../../templates/formHeader.hbs'
-import buttonsHeaderTemplate from '../../templates/buttonsHeader.hbs'
+import formHeaderTemplate from '../../templates/formHeader.hbs';
+import buttonsHeaderTemplate from '../../templates/buttonsHeader.hbs';
 import { searchFormHandler } from "./searchFormHandler";
-import {onFilmAction} from "./onFilmAction"
+import { onFilmAction } from "./onFilmAction.js";
 
 export const headerMenuLinks = [
     {
-        pathname: "/",
+        pathname: "/home",
         template: formHeaderTemplate,
         selector: "#search-film",
         actionType: "submit",
@@ -16,8 +16,9 @@ export const headerMenuLinks = [
         pathname: "/my-library",
         template: buttonsHeaderTemplate,
         selector: "#profile-films-actions",
-        actionType: "submit",
+        actionType: "click",
         listener: onFilmAction,
         headerClass: "header-my-library-bg",
     }
 ];
+
