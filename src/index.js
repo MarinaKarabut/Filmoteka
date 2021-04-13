@@ -8,7 +8,7 @@ import MovieHttpService from './js/MovieHttpService';
 import renderFilms from './js/renderFilms';
 import showFilmInfo from './js/showFilmInfo';
 import { closeModal, onClickOverlay, escapeClose } from './js/closeModal';
-import addHeaderMenuEventListener from './js/header';
+import addHeaderMenuEventListener from './js/header/index.js';
 import renderModalStudents from './js/createStudentsInfo.js';
 import createElement from './js/createElement.js';
 import { loader } from './js/loader.js';
@@ -20,11 +20,8 @@ import headerTemplate from './templates/header-main.hbs';
 import movieGalleryTemplate from './templates/movie-gallery.hbs';
 import footerTemplate from './templates/footer.hbs';
 import modalWindowTemplate from './templates/modal-window.hbs';
-// import { onClickChangeBtn } from './js/header/onClickChangeBtn.js'
-
 
 import footerSrc from './images/sprite.svg';
-import toggleModalBtns from './js/toggleModalBtns';
 
 const refs = {
   header: document.getElementById('header-main'),
@@ -41,20 +38,15 @@ refs.modalWindow.innerHTML = modalWindowTemplate();
 const movieHttpService = new MovieHttpService();
 
 window.addEventListener('DOMContentLoaded', async () => {
-
-  let { pathname } = window.location;
-
-  pathname = (pathname === '/') ? '/home' : pathname;
-
-  addHeaderMenuEventListener(refs.header, pathname);
-  
-  createHeaderContent(pathname);
+  addHeaderMenuEventListener();
   const galleryList = refs.main.querySelector('.js-gallery-movies');
-  
+
+
+
   try {
     const newLoader = createElement(loader);
     galleryList.insertAdjacentElement('afterbegin', newLoader);
-    
+
     if (window.location.pathname === "/my-library") {
       createHeaderContent(window.location.pathname);
       const mainLinksContainer = document.getElementById("main-nav");
@@ -70,18 +62,17 @@ window.addEventListener('DOMContentLoaded', async () => {
       renderFilms(films, galleryList);
     }
     changeLocation();
-
     galleryList.addEventListener('click', showFilmInfo);
   } catch (error) {
     galleryList.innerHTML = `<p>It's so pitty. No movies were found :( </p>`;
-}
-    
-    const closeModalBtn = refs.modalWindow.querySelector('.modal-btn__icon');
-    closeModalBtn.addEventListener('click', closeModal);
+  }
 
-  // const { selector, actionType, listener } = headerMenuLinks[0];
-  // const headerHomeElement = document.querySelector(selector);
-  // headerHomeElement.addEventListener(actionType, listener);
+  const closeModalBtn = refs.modalWindow.querySelector('.modal-btn__icon');
+  closeModalBtn.addEventListener('click', closeModal);
+
+  const { selector, actionType, listener } = headerMenuLinks[0];
+  const headerHomeElement = document.querySelector(selector);
+  headerHomeElement.addEventListener(actionType, listener);
 
   const overlay = document.querySelector('.backdrop');
   overlay.addEventListener('click', onClickOverlay);
@@ -90,5 +81,4 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   const modalStudentsLink = document.getElementById('students-modal');
   modalStudentsLink.addEventListener('click', renderModalStudents);
-
 });

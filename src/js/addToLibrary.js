@@ -7,13 +7,12 @@ import { renderFilmsFromLS } from './header/onFilmAction.js';
 
 
 export default function addToLibrary(id) {
-  
+
   const modal = document.querySelector('.js-modal')
   const btnWatched = modal.querySelector('.btn-watched')
   const btnQueue = modal.querySelector('.btn-queue');
 
   if (watched.includes(id)) {
-    console.log(watchedBtnProps)
     btnWatched.dataset.type = queueBtnProps.remove.type;
     btnWatched.textContent = watchedBtnProps.remove.text;
     btnWatched.style.backgroundColor = watchedBtnProps.remove.bg;
@@ -30,7 +29,7 @@ export default function addToLibrary(id) {
     if (window.location.pathname === "/my-library") {
         renderFilmsFromLS(watched)
     }
-  
+
   })
   btnQueue.addEventListener('click', (e) => {
     toggleModalBtnQueue(e, id);

@@ -3,7 +3,7 @@ import filmsSearchOptions from './filmOptions.js';
 import createElement from './createElement.js';
 import renderFilms from './renderFilms.js';
 import { loader } from './loader.js';
-import { renderFilmsFromLS} from './header/onFilmAction.js'
+import { renderFilmsFromLS } from './header/onFilmAction.js';
 
 const movieHttpService = new MovieHttpService();
 
@@ -23,13 +23,12 @@ function changeLocation() {
 
     }
     if (window.location.pathname === "/my-library") {
-      console.log("/library");
-      const btnWatched = document.getElementById('js-btn-watched')
-      btnWatched.classList.add('is-active')
-      const localWatched = localStorage.getItem("watched")
-      const watched = localWatched ? JSON.parse(localWatched) : []
+      const btnWatched = document.getElementById('js-btn-watched');
+      btnWatched.classList.add('is-active');
+      const localWatched = localStorage.getItem("watched");
+      const watched = localWatched ? JSON.parse(localWatched) : [];
       renderFilmsFromLS(watched)
-      const btnContainer = document.getElementById('#profile-films-actions')
+      const btnContainer = document.getElementById('#profile-films-actions');
       toggle()
      }
 
@@ -37,18 +36,15 @@ function changeLocation() {
 }
 
 export function toggle() {
-const btnContainer = document.getElementById('profile-films-actions')
-  console.log(btnContainer);
+  const btnContainer = document.getElementById('profile-films-actions');
+
   btnContainer.addEventListener('click', function (e) {
-    e.target
     if (e.target.nodeName !== 'BUTTON') {
-      return
+      return;
     }
-    btnContainer.querySelectorAll('button')
-      .forEach(el => 
-        el.classList.toggle('is-active')
-        )
-  })
+     btnContainer.querySelector('.is-active').classList.toggle('is-active')
+    e.target.classList.toggle('is-active')
+  });
  }
 
  export default changeLocation;

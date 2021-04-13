@@ -97,16 +97,13 @@ pagination.addEventListener('click', function (e) {
     const activeBtn = e.target;
     if (e.target.classList.contains('pagination-button')) {
         page = +activeBtn.textContent;
-        console.log(page);
         currentPage.textContent = page;
     } else if (e.target.id === 'arrow-left') {
         page = +currentPage.textContent - 1;
         currentPage.textContent = page;
-        console.log('work1');
     } else if (e.target.id === 'arrow-right') {
         page = +currentPage.textContent;
         currentPage.textContent = page + 1;
-        console.log('work2');
     }
     pagBtnRender(totalPages, page);
 });

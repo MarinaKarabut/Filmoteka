@@ -15,7 +15,6 @@ function showFilmInfo(e) {
 
     const { filmId } = target.dataset;
     const data = movieHttpService.getFilmById(filmId);
-    console.log(data);
     data.then(({ data }) => {
       const filmName = data.original_title;
       const linkYoutube = createTrailerLink(filmName);
@@ -37,10 +36,9 @@ function showFilmInfo(e) {
 export function showIframe(e) {
   e.preventDefault()
   const { youtubeId } = info
-  console.log(youtubeId)
   const renderIframe = iframeTemplate({ youtubeId })
   openModal(renderIframe)
-  console.log(renderIframe)
+
 }
 
 export default showFilmInfo;
