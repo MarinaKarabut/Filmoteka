@@ -7,7 +7,7 @@ export function createHeaderContent(path) {
     headerPageContent.innerHTML = template();
     if (selector) {
         const element = document.querySelector(selector);
-        element.addEventListener(actionType, listener);
+        // element.addEventListener(actionType, listener);
     }
     if (headerClass) {
         const header = document.querySelector(".section-header");
