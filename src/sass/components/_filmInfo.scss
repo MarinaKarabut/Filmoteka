@@ -65,8 +65,20 @@
       background-color: $accent-color;
       color: $secondary-color;
     }
-    &:not(:last-child) {
-      margin-right: 10px;
+    @include mobile-end {
+      display: block;
+    }
+
+    @include tablet-end {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    @include tablet-end {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
     }
   }
 

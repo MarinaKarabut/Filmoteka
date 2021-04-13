@@ -9,7 +9,6 @@ import renderModalStudents from './js/createStudentsInfo.js';
 import createElement from './js/createElement.js';
 import { loader } from './js/loader.js';
 import changeLocation from './js/changeCurrentPage.js';
-
 import filmsSearchOptions from "./js/filmOptions.js";
 import { headerMenuLinks } from "./js/header/headerMenuLinks.js";
 
