@@ -1,5 +1,4 @@
-import addToWatched from './addToWatched.js'
-import addToQueue from './addToQueue.js'
+import { showIframe } from './showFilmInfo.js'
 
 function openModal(modalContent) {
   const modalContentRef = document.querySelector('.modal-content')
@@ -13,7 +12,9 @@ function openModal(modalContent) {
 
   // const btnWatched = modal.querySelector('.btn-watched')
   // const btnQueue = modal.querySelector('.btn-queue')
+  const btnYoutube = modal.querySelector('.btn-youtube')
 
+  btnYoutube.addEventListener('click', showIframe)
   // btnWatched.addEventListener('click', addToWatched)
   // btnQueue.addEventListener('click', addToQueue)
 }

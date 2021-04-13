@@ -1,30 +1,16 @@
-import { addToWatched, removeToWatched } from './addToWatched.js';
+import { toggleWatch } from './toggleWatch.js';
+import { watchedBtnProps } from "./localBtnProps.js";
 
-function changeBtnAdd(nodeBtn) {
-    console.log(nodeBtn);
-    nodeBtn.textContent = 'Remove to watched'
-    nodeBtn.dataset.type = 'remove'
-    nodeBtn.style.backgroundColor = $secondary-accent-color
+function toggleBtn(type, nodeBtn) {
+    type = (type === 'remove') ? "add" : "remove";
+    nodeBtn.dataset.type = type;
+    nodeBtn.textContent = watchedBtnProps[type].text;
+    nodeBtn.style.backgroundColor = watchedBtnProps[type].bg;
 }
 
-function changeBtnRemove(nodeBtn) {
-    nodeBtn.textContent = 'Add to watched'
-    nodeBtn.dataset.type = 'add'
-    nodeBtn.style.backgroundColor = ''
-}
- 
-export default function toggleModalBtns(e, movie) {
+export default function toggleModalBtns(e, id) {
+    e.preventDefault();
     const { type } = e.target.dataset;
-    const { id } = movie;
-
-    switch (type) {
-        case 'remove':
-            removeToWatched(id);
-            changeBtnRemove(e.target);
-            break;
-        case 'add':
-            addToWatched(movie);
-            changeBtnAdd(e.target);
-            break;
-   }
+    toggleWatch(id);
+    toggleBtn(type, e.target);
 }

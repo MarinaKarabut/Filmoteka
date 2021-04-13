@@ -30,7 +30,7 @@ class MovieHttpService {
       films.results = movies;
        return films;
      } catch (error) {
-       return error;
+       throw error;
      }
   }
 
@@ -46,19 +46,50 @@ class MovieHttpService {
     }
     catch (error) {
       console.log(error);
-      return error;
+      throw error;
     }
   }
-
   async getFilmById(id) {
     try {
       const requestParams = this.createParams();
       const result = await axios.get(`/movie/${id}`, requestParams);
+      console.log(result)
       return result;
     }
     catch (error) {
       console.log(error);
-      return error;
+      throw error;
+    }
+  }
+
+
+  async getFilmsFromId(arrId) {
+      try {
+        const requests = arrId.map(id => this.getFilmById(id));
+        const results = await Promise.allSettled(requests);
+        const films = results.filter(({ status }) => status === "fulfilled").map(({ value }) => value.data);
+        const fullFilms = films.map(film => {
+          const { poster_path, original_title, genres, release_date, vote_average, id, name, original_name, first_air_date, ...rest } = film;
+          const newPosterPath = poster_path ? `https://image.tmdb.org/t/p/w300/${poster_path}` : defaultImg
+            const realeseData = release_date || first_air_date;
+            const [newRelease_date] = realeseData.split("-");
+            const genreList = genres.map(({name}) => name)
+              .filter(elem => elem).slice(0, 3).join(", ");
+            return {
+              poster_path: newPosterPath,
+              original_title: original_title || original_name || name || title || `undefined tittle`
+              , genreList, realeseData: newRelease_date, vote_average, id,
+            };
+        })
+        return fullFilms;
+      }
+    //   const requestParams = this.createParams();
+    //   const result = await axios.get(`/movie/${id}`, requestParams);
+    //   return result;
+    // }
+    catch (error) {
+      console.log(error);
+      throw error;
     }
   }
 
