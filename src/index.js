@@ -16,6 +16,7 @@ import headerTemplate from './templates/header-main.hbs';
 import movieGalleryTemplate from './templates/movie-gallery.hbs';
 import footerTemplate from './templates/footer.hbs';
 import modalWindowTemplate from './templates/modal-window.hbs';
+import { onClickChangeBtn } from './js/header/onClickChangeBtn.js'
 
 import footerSrc from './images/sprite.svg';
 
