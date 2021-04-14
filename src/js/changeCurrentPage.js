@@ -14,7 +14,7 @@ function changeLocation() {
     if (e.target.nodeName !== "A") {
       return;
     }
-    if (window.location.pathname === "/home") {
+    if (window.location.pathname === "/Filmoteka/") {
       const newLoader = createElement(loader);
       galleryList.insertAdjacentElement('afterbegin', newLoader);
       const films = await movieHttpService.get(filmsSearchOptions);
