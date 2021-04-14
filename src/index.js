@@ -46,8 +46,9 @@ window.addEventListener('DOMContentLoaded', async () => {
   try {
     const newLoader = createElement(loader);
     galleryList.insertAdjacentElement('afterbegin', newLoader);
-
+console.log(window.location.pathname);
     if (window.location.pathname === "/my-library") {
+console.log(window.location.pathname);
       createHeaderContent(window.location.pathname);
       const mainLinksContainer = document.getElementById("main-nav");
       const libraryBtns = document.getElementById("profile-films-actions");
